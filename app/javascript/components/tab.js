@@ -11,8 +11,8 @@ const changeTabs = () => {
         hideActive()
         contentHidden()
         event.currentTarget.classList.add('tab-active');
+        // event.currentTarget.insertAdjacentHTML('beforeend', '<hr>')
         // console.log(event.currentTarget.attributes.id.value[4])
-
         selectedContents.forEach((content) => {
           // console.log(content.attributes.id.value[8])
           if (content.attributes.id.value[8] === event.currentTarget.attributes.id.value[4]) {
