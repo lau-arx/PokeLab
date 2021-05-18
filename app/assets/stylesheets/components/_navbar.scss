@@ -2,8 +2,9 @@
   justify-content: space-between;
   background: transparent;
   // padding: 15px;
-  position: sticky;
+  position: fixed;
   top: 0px;
+  width: 100%;
   transition: 0.5s background-color ease;
   #login {
     color: white;
@@ -21,5 +22,7 @@
 
 .navbar-lewagon-white {
   background-color: white;
-  color: black;
+  #login {
+    color: black;
+  }
 }
