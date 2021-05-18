@@ -1,27 +1,29 @@
-<div class="main-container-sign-up col-4 offset-4 mt-5 mb-3">
-  <h2>Sign up</h2>
+<%# <div class="maine-container" style="background-image: url('= image_path 'background_form_signe_up.jpeg'')"> %>
+  <div class="container-sign-up col-4 offset-4 mt-5 mb-3">
+    <h2>Sign up</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit, "Sign up", class: "btn btn-primary mt-3" %>
-      <% end %>
-    </div>
-</div>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, "Sign up", class: "btn btn-primary mt-3" %>
+        <% end %>
+      </div>
+  </div>
 
-<div class="btn-container mb-5 col-4 offset-4">
-  <%= render "devise/shared/links", class: "btn btn-primary"  %>
-</div>
+  <div class="btn-container mb-5 col-4 offset-4">
+    <%= render "devise/shared/links", class: "btn btn-primary"  %>
+  </div>
+<%# </div> %>
