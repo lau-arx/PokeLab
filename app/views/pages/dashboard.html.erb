@@ -9,23 +9,19 @@
 
   <%# To do : add curent_user name once model updated  %>
 
-
-
-  <div id="tab-1-content">
-
+  <div class="content displayed" id="content-1">
     <% @pokemons.each do |pokemon| %>
       <%= pokemon.name  %>
     <% end %>
-
   </div>
 
-  <div id="tab-2-content">
+  <div class="content hidden" id="content-2">
       <% @bookings.each do |booking| %>
       <%= booking.start_date  %>
     <% end %>
   </div>
 
-  <div id="tab-3-content">
+  <div class="content hidden" id="content-3">
     WIP: Reviews
   </div>
 </div>
