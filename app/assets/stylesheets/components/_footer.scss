@@ -1,0 +1,54 @@
+.footer {
+  background-color: $dark-blue;
+  position: relative;
+  bottom: 0px;
+  width: 100%;
+  padding: 8px;
+
+  hr {
+    background-color: $white;
+    width: 70%;
+    height: 1px;
+    border-radius: 10px;
+    margin: 24px auto;
+    text-align: center;
+  }
+
+  h6 {
+    text-align: center;
+    color: $white;
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .fab {
+    color: $white;
+    font-size: 36px;
+  }
+
+  .social-media, .footer-info {
+    display: flex; 
+    justify-content: space-evenly;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+}
+
+.social-media {
+  padding: 0px 80px;
+}
+
+.footer-info {
+  padding: 0px 190px;
+  .footer-text {
+    color: $white;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .size {
+    width: 20%;
+  }
+}
