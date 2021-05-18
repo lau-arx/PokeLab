@@ -1,12 +1,21 @@
 
-<div class="container-index m-5">
+<div class="banner-index">
+  <h1>Around you:</h1>
+  <h3>+<%=@pokemons.count%> Pokemons in your area</h3>
+</div>
 
-  <h1>List Of All Pokemons </h1>
-    <div>
+<div class="container">
+  <div class="cards">
       <% @pokemons.each do |pokemon| %>
-        <p><%= link_to pokemon.name , pokemon_path(pokemon)%></p>
+        <div class="card-pokemon">
+          <h3><%= link_to pokemon.name.upcase , pokemon_path(pokemon) %></h3>
+          <p><%= link_to pokemon.category.upcase , pokemon_path(pokemon) %></p>
+          <p><%= pokemon.price_per_day %>/day</p>
+          </div>
       <% end %>
     </div>
-  <p><%= link_to "Add New Pokemon", new_pokemon_path, class: "btn btn-primary" %></p>
 
 </div>
+
+
+
