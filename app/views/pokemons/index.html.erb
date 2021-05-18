@@ -1,0 +1,12 @@
+
+<div class="container-index m-5">
+
+  <h1>List Of All Pokemons </h1>
+    <p>
+      <% @pokemons.each do |pokemon| %>
+        <%= link_to pokemon.name , pokemon_path(pokemon)%>
+      <% end %>
+    </p>
+  <p><%= link_to "Add New Pokemon", new_pokemon_path, class: "btn btn-primary" %></p>
+
+</div>

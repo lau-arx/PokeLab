@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 2021_05_17_151925) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
-    t.string "type"
     t.text "description"
     t.integer "height"
     t.integer "weight"
@@ -40,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_05_17_151925) do
     t.integer "health_point"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "category"
     t.index ["user_id"], name: "index_pokemons_on_user_id"
   end
 
