@@ -2,6 +2,12 @@
 <div class="container-show m-5">
   <h2><%= @pokemon.name %></h2>
 
+  <% if @pokemon.photo.attached? %>
+    <p><%= cl_image_tag @pokemon.photo.key, height: 300, width: 400, crop: :fill %></p>
+  <% else %>
+    <%= cl_image_tag("tfoqtj3tttbjd0satx2t", width: 400, height: 300, crop: :fill) %>
+  <% end %>
+
   <p><%= @pokemon.category %></p>
   <p><%= @pokemon.description %></p>
   <p><%= @pokemon.height %></p>
