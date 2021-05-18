@@ -3,6 +3,10 @@
 }
 
 .btn-know-more {
-  color: blue;
-  background-color: yellow;
+  color: $blue;
+  background-color: $yellow;
+  &:hover {
+    color: $blue;
+    background-color: rgb(214, 214, 137);
+  }
 }
