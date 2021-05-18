@@ -3,4 +3,13 @@
   width: 95%;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
 
+.custom-container {
+  min-height: calc(100vh - 208px);
+  padding-top: 86px;
+}
