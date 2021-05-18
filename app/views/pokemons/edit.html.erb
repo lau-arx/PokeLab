@@ -1,6 +1,6 @@
 <div class="container-show mt-5 col-4 offset-4">
 
-  <h1>Add New Pokemon</h1>
+  <h1>Edit Your Pokemon</h1>
 
   <%= simple_form_for(@pokemon) do |f| %>
   <%= f.input :name %>
@@ -11,14 +11,15 @@
   <%= f.input :special_attack %>
   <%= f.input :price_per_day %>
   <%= f.input :health_point %>
-  <%= f.submit "Add New Pokemon", class: "btn btn-primary mt-5" %>
+  <%= f.submit "Edit Youe Pokemon", class: "btn btn-primary mt-5" %>
   <% end %>
 
 </div>
 
 <div class="btn-container mt-5 col-4 offset-4">
-  <p><%= link_to "Return to list", pokemons_path, class: "btn btn-primary"  %></p>
+  <p><%= link_to "Return details Of Pokemon", pokemon_path, class: "btn btn-primary"  %></p>
 </div>
 
-
-
+<div class="btn-container mt-5 col-4 offset-4">
+  <p><%= link_to "Return to list", pokemons_path, class: "btn btn-primary"  %></p>
+</div>

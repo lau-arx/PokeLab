@@ -1,4 +1,5 @@
-<div class="container m-5">
+
+<div class="container-show m-5">
   <h2><%= @pokemon.name %></h2>
 
   <p><%= @pokemon.category %></p>
@@ -8,4 +9,11 @@
   <p><%= @pokemon.special_attack %></p>
   <p><%= @pokemon.price_per_day %></p>
   <p><%= @pokemon.health_point %></p>
+
+  <p><%= link_to "Return to list", pokemons_path, class: "btn btn-primary"   %></p>
+
+</div>
+
+<div class="btn-container m-5">
+  <p><%= link_to "Edit Your Pokemon", edit_pokemon_path, class: "btn btn-primary"  %></p>
 </div>
