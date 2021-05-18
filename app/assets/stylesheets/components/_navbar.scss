@@ -1,12 +1,25 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: transparent;
+  // padding: 15px;
+  position: sticky;
+  top: 0px;
+  transition: 0.5s background-color ease;
+  #login {
+    color: white;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-lewagon .logo {
+  width: 60px;
+  margin-left: 10px;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+  color: black;
 }
