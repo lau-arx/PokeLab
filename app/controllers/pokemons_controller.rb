@@ -1,18 +1,21 @@
 class PokemonsController < ApplicationController
+  before_action :find_pokemon, only: [:show, :edit, :update, :destroy]
   def index
     @pokemons = Pokemon.all
+    @pokemons = policy_scope(Pokemon).order(created_at: :desc)
   end
 
   def show
-    @pokemon = Pokemon.find(params[:id])
   end
 
   def new
     @pokemon = Pokemon.new
+    authorize @pokemon
   end
 
   def create
     @pokemon = Pokemon.new(pokemon_params)
+    authorize @pokemon
     @pokemon.user = current_user
     if @pokemon.save
       redirect_to pokemons_path
@@ -21,17 +24,27 @@ class PokemonsController < ApplicationController
     end
   end
 
-  # def edit
-  #   @pokemon = Pokemon.find(params[:id_edit])
-  # end
+  def edit
+  end
 
-  # def update
+  def update
+    @pokemon.update(pokemon_params)
+    redirect_to pokemon_path
+  end
 
-  # end
+  def destroy
+    @pokemon.destroy
+    redirect_to pokemons_path
+  end
 
   private
 
   def pokemon_params
     params.require(:pokemon).permit(:user, :name, :category, :description, :height, :weight, :special_attack, :price_per_day, :health_point)
+  end
+
+  def find_pokemon
+    @pokemon = Pokemon.find(params[:id])
+    authorize @pokemon
   end
 end
