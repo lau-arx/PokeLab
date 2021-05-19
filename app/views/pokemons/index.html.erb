@@ -1,13 +1,21 @@
 
 <div class="banner-index">
   <h1>Around you:</h1>
-  <h3>+<%=@pokemons.count%> Pokemons in your area</h3>
+  <%if @pokemons.length > 0%>
+  <h3>+<%=@pokemons.length%> Pokemons in your area</h3>
+  <% else %>
+  <h3><%="No pokemon available in your area"%></h3>
+  <% end %>
 </div>
 
 <div class="container">
   <div class="cards">
       <% @pokemons.each do |pokemon| %>
+      <%if pokemon.photo.attached? %>
         <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= cl_image_path pokemon.photo.key%>')">
+      <% else %>
+        <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= image_path "verso-carte.png" %>')">
+      <% end %>
           <h3><%= link_to pokemon.name.upcase , pokemon_path(pokemon) %></h3>
           <p><%= link_to pokemon.category.upcase , pokemon_path(pokemon) %></p>
           <p><%= pokemon.price_per_day %>/day</p>
