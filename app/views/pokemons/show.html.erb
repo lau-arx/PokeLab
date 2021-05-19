@@ -1,26 +1,53 @@
 
-<div class="container-show m-5">
-  <h2><%= @pokemon.name %></h2>
+<div class="container">
+  <div class = "cards-all">
 
-  <% if @pokemon.photo.attached? %>
-    <p><%= cl_image_tag @pokemon.photo.key, height: 300, width: 400, crop: :fill %></p>
-  <% else %>
-    <%= cl_image_tag("tfoqtj3tttbjd0satx2t", width: 400, height: 300, crop: :fill) %>
-  <% end %>
+    <div class = "card-left">
+      <h2><%= @pokemon.name %></h2>
+      <% if @pokemon.photo.attached? %>
+        <p><%= cl_image_tag @pokemon.photo.key, width: 400, height: 300, crop: :fill %></p>
+      <% else %>
+        <%= cl_image_tag("tfoqtj3tttbjd0satx2t", width: 400, height: 300, crop: :fill) %>
+      <% end %>
+      <%if @pokemon.category == "Electric"%>
+        <div class="electric">
+      <%elsif @pokemon.category == "Fire"%>
+        <div class="fire">
+      <%elsif @pokemon.category == "Earth"%>
+        <div class="earth">
+      <%elsif @pokemon.category == "Psych"%>
+        <div class="psych">
+      <%elsif @pokemon.category == "Plant"%>
+        <div class="plant">
+      <%else%>
+        <div class="water">
+      <%end%>
+      <div class="details">
+          <div class= "detail-left">
+            <p><strong>Category</strong> : <%=@pokemon.category%></p>
+            <p><strong>Height</strong> : <%= @pokemon.height %></p>
+            <p><strong>Weight</strong> : <%= @pokemon.weight %></p>
+          </div>
+          <div class = "detail-right">
+            <p><strong>Special Attack</strong> : <%= @pokemon.special_attack %></p>
+            <p><strong>Price per day</strong> : <%= @pokemon.price_per_day %></p>
+            <p><strong>Health Points</strong> : <%= @pokemon.health_point %></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <p><%= @pokemon.category %></p>
-  <p><%= @pokemon.description %></p>
-  <p><%= @pokemon.height %></p>
-  <p><%= @pokemon.weight %></p>
-  <p><%= @pokemon.special_attack %></p>
-  <p><%= @pokemon.price_per_day %></p>
-  <p><%= @pokemon.health_point %></p>
+    <div class="card-right">
+      <div class="cards-description">
+        <p><%= @pokemon.description %></p>
+      </div>
+    </div>
 
-  <p><%= link_to "Return to list", pokemons_path, class: "btn btn-primary"   %></p>
-
+  </div>
 </div>
 
 <div class="btn-container m-5">
+  <p><%= link_to "Return to list", pokemons_path, class: "btn btn-primary"   %></p>
   <p><%= link_to "Edit Your Pokemon", edit_pokemon_path, class: "btn btn-primary"  %></p>
   <p><%= link_to "Delete #{@pokemon.name}",
             pokemon_path(@pokemon),
