@@ -100,8 +100,92 @@
       color: white;
     }
   }
+}
 
+.card-pokedex {
+  background-color: $white;
+  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.13);
+  border-radius: 8px;
+  display: felx;
+  flex-direction: column;
+  margin-bottom: 16px;
+  padding: 16px;
 
+  .card-buttons {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      .fa-trash-alt {
+        color: $red;
+      }
+
+      .fa-edit {
+        color: $green;
+      }
+
+      &:hover {
+        opacity: 0.3;
+      }
+    }
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: $white;
+    padding: 0;
+    border-bottom: 0;
+    margin-top: 8px;
+
+    h3, p {
+      justify-self: center;
+      align-items: center;
+    }
+
+    h3 {
+      font-weight: bold;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 20%;
+    background-size: cover;
+    object-fit: contain;
+    background-position: center;
+  }
+
+  .card-price {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-description {
+    h5 {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .card-price {
+    display: flex;
+    align-items: flex-end;
+    h5 {
+      border-radius: 25%;
+      background-color: $yellow;
+      padding: 8px;
+      align-self: center;
+      color: $white;
+    }
+    .fa-star {
+      color: $yellow;
+    }
+  }
 }
 
 .cards-index {

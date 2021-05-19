@@ -14,4 +14,24 @@ $gray: #383535;
 $medium-gray: #b9b8b8;
 $light-gray: #F4F4F4;
 $white: #FFFFFF;
+$maroon: #776258;
 
+.water {
+  color: $blue;
+}
+
+.fire, .electric {
+  color: $yellow;
+}
+
+.psych {
+  color: $dark-yellow;
+}
+
+.plant {
+  color: $green;
+}
+
+.earth {
+  color: $maroon;
+}
