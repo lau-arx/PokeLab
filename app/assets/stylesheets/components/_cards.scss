@@ -220,3 +220,58 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.container {
+  display: flex;
+  padding: 50px
+}
+
+.cards-all {
+  display:flex;
+}
+
+.details {
+  width:100%;
+  img {
+    justify-content: center;
+  }
+  display: flex;
+  justify-content: center;
+}
+
+.card-right{
+  margin-top: 0;
+  margin-left: 10px;
+  margin-bottom: 1rem;
+}
+
+
+.electric{
+  background-color: #FEE94E;
+  border-radius: 15px;
+}
+
+.fire{
+  background-color: #ED4445;
+  border-radius: 15px;
+}
+
+.earth{
+  background-color: #D69E87;
+  border-radius: 15px;
+}
+
+.psych{
+  background-color: #F6C7F2;
+  border-radius: 15px;
+}
+
+.water{
+  background-color: #86BBF9;
+  border-radius: 15px;
+}
+
+.plant{
+  background-color: #70F7C1;
+  border-radius: 15px;
+}
