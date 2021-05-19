@@ -1,5 +1,5 @@
 
-<div class="container-pokemon">
+<div class="container-show">
   <div class = "cards-all">
 
     <div class = "card-left">
@@ -46,25 +46,15 @@
   </div>
 </div>
 
-<div class="btn-container m-5">
-  <p><%= link_to "Return to list", pokemons_path, class: "btn btn-primary"   %></p>
-  <p><%= link_to "Edit Your Pokemon", edit_pokemon_path, class: "btn btn-primary"  %></p>
-  <p><%= link_to "Delete #{@pokemon.name}",
-            pokemon_path(@pokemon),
-            method: :delete,
-            data: { confirm: "Are you sure?" }%></p>
-
-</div>
-
 <div>
-   <form action="/pokemons/:pokemon_id/bookings/new" class="flex-form">
+   <form action="/pokemons/<%=@pokemon.id%>/bookings" class="flex-form" method="POST">
+   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
       <label for="from">From</label>
-      <input type="date" name="from" placeholder="Location" />
+      <input type="date" name="booking[start_date]" id="from" placeholder="Location">
       <label for="to">To</label>
-      <input type="date" name="to" />
-      <input type="submit" value="Book <%= @pokemon.name %>" />
+      <input type="date" name="booking[end_date]" id="to"  />
+      <input type="submit" value="Confirm booking of <%= @pokemon.name %>">
     </form>
 </div>
-
 
 

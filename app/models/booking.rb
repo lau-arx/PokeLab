@@ -2,8 +2,13 @@ class Booking < ApplicationRecord
   belongs_to :pokemon
   belongs_to :user
 
-  # validates :start_date, :end_date, presence: true, availability: true
+  validates :start_date, presence: true
+  validates :end_date, presence: true
   # validates :end_date_after_start_date
+
+  # def create
+  #   @booking = Booking.new(pokemon_id: params[:id])
+  # end
 
   # private
 

@@ -65,8 +65,10 @@
 
   <div class="content hidden" id="content-2">
       <% @bookings.each do |booking| %>
-      <%= booking.start_date %>
-      <%= booking.end_date %>
+      <%= Pokemon.find(booking.pokemon_id).name%>
+      <p>From : <%= booking.start_date %></p>
+      <p>To : <%= booking.end_date %></p>
+      <p>At : <%= Pokemon.find(booking.pokemon_id).address %></p>
       <%= booking.total_price %>
     <% end %>
     WIP: Bookings

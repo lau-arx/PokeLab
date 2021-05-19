@@ -10,7 +10,6 @@ class PokemonsController < ApplicationController
         lng: pokemon.longitude
       }
     end
-    # raise
   end
 
   def show
