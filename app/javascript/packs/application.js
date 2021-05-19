@@ -24,6 +24,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import Turbolinks from "turbolinks";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { changeTabs } from "../components/tab";
 
@@ -33,6 +34,6 @@ import { changeTabs } from "../components/tab";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initUpdateNavbarOnScroll();
   changeTabs();
+  initUpdateNavbarOnScroll();
 });
