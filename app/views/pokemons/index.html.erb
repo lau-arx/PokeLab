@@ -1,15 +1,14 @@
 
-<div class="banner-index">
-  <h1>Around you:</h1>
-  <%if @pokemons.length > 0%>
-  <h3>+<%=@pokemons.length%> Pokemons in your area</h3>
-  <% else %>
-  <h3><%="No pokemon available in your area"%></h3>
+<h1>Around you:</h1>
+<%if @pokemons.length > 0%>
+<h3>+<%=@pokemons.length%> Pokemons in your area</h3>
+<% else %>
+<h3><%="No pokemon available in your area"%></h3>
   <% end %>
-</div>
+<div class="container-index">
+  <div class="cards cards-index">
 
-<div class="container">
-  <div class="cards">
+
       <% @pokemons.each do |pokemon| %>
       <%if pokemon.photo.attached? %>
         <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= cl_image_path pokemon.photo.key%>')">
@@ -23,13 +22,13 @@
       <% end %>
     </div>
 
+  <div class="map-index" id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
 
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+
 
 
 
