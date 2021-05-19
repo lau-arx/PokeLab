@@ -81,8 +81,8 @@
   justify-content: flex-end;
   padding: 10px;
   justify-self: center;
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 550px;
   background-size: cover;
   object-fit: contain;
   border-radius: 4px;
@@ -104,6 +104,14 @@
 
 }
 
+.cards-index {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 10px;
+  justify-content: left;
+  align-items: center;
+}
 
 @media(max-width: 600px) {
   .cards {
