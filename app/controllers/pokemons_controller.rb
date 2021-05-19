@@ -3,6 +3,12 @@ class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.all
     @pokemons = policy_scope(Pokemon).order(created_at: :desc)
+    @markers = @pokemons.geocoded.map do |pokemon|
+      {
+        lat: pokemon.latitude,
+        lng: pokemon.longitude
+      }
+    end
   end
 
   def show
@@ -40,7 +46,7 @@ class PokemonsController < ApplicationController
   private
 
   def pokemon_params
-    params.require(:pokemon).permit(:photo, :user, :name, :category, :description, :height, :weight, :special_attack, :price_per_day, :health_point)
+    params.require(:pokemon).permit(:photo, :user, :name, :category, :description, :height, :weight, :special_attack, :price_per_day, :health_point, :address)
   end
 
   def find_pokemon
