@@ -7,7 +7,7 @@
 <div class="container">
   <div class="cards">
       <% @pokemons.each do |pokemon| %>
-        <div class="card-pokemon">
+        <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= cl_image_path pokemon.photo.key%>')">
           <h3><%= link_to pokemon.name.upcase , pokemon_path(pokemon) %></h3>
           <p><%= link_to pokemon.category.upcase , pokemon_path(pokemon) %></p>
           <p><%= pokemon.price_per_day %>/day</p>
@@ -22,5 +22,6 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
+
 
 
