@@ -1,0 +1,38 @@
+<div class="tabs">
+  <div class="tab tab-active" id="tab-1">
+    <i class="fas fa-list-alt"></i><br>
+    My Pokemons
+  </div>
+  <div class="tab" id="tab-2">
+    <i class="fas fa-calendar-plus"></i><br>
+    My Bookings
+  </div>
+  <div class="tab" id="tab-3">
+    <i class="fas fa-star"></i><br>
+    My Reviews</div>
+  </div>
+
+<div class="container">
+  <h1>Welcome <%= current_user %></h1>
+
+  <%# To do : add curent_user name once model updated  %>
+
+  <div class="content displayed" id="content-1">
+    <% @pokemons.each do |pokemon| %>
+      <%= pokemon.name  %>
+    <% end %>
+  </div>
+
+  <div class="content hidden" id="content-2">
+      <% @bookings.each do |booking| %>
+      <%= booking.start_date  %>
+    <% end %>
+    WIP: Bookings
+  </div>
+
+  <div class="content hidden" id="content-3">
+    WIP: Reviews
+  </div>
+</div>
+
+
