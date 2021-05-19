@@ -2,6 +2,18 @@
   border-radius: 8px;
 }
 
+.btn-shoot {
+  background-color: $red;
+  border-radius: 8px;
+  margin-top: 8px;
+  margin-left: 24px;
+  color: white;
+  font-size: 16px;
+  &:hover {
+    background-color: $dark-red;
+    color: white;
+  }
+}
 .btn-know-more {
   color: $blue;
   background-color: $yellow;
