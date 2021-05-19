@@ -18,19 +18,21 @@
   <%# To do : add curent_user name once model updated  %>
 
   <div class="content displayed" id="content-1">
-    <% @pokemons.each do |pokemon| %>
-    <div class="pokemon-card">
-      <% if pokemon.photo.attached? %>
-        <%= cl_image_tag pokemon.photo.key %>
-      <%else%>
-        <%= image_tag "default_photo.png" %>
-      <%end%>
-      <p><%= pokemon.name %></p>
-      <p><%= pokemon.description %></p>
-      <p><%= pokemon.special_attack %></p>
-      <p><%= pokemon.health_point %></p>
-      <p><%= pokemon.price_per_day%>€</p>
-    <% end %>
+    <div class="cards">
+      <% @pokemons.each do |pokemon| %>
+        <div class="card-pokemon">
+          <% if pokemon.photo.attached? %>
+            <%= cl_image_tag pokemon.photo.key %>
+          <%else%>
+            <%= image_tag "default_photo.png" %>
+          <%end%>
+          <p><%= pokemon.name %></p>
+          <p><%= pokemon.description %></p>
+          <p><%= pokemon.special_attack %></p>
+          <p><%= pokemon.health_point %></p>
+          <p><%= pokemon.price_per_day%>€</p>
+        </div>
+      <% end %>
     </div>
   </div>
 
@@ -46,6 +48,8 @@
   <div class="content hidden" id="content-3">
     WIP: Reviews
   </div>
+
 </div>
+
 
 
