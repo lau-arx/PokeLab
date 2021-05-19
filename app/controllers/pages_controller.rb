@@ -7,5 +7,5 @@ class PagesController < ApplicationController
 
 
 
-  
+
 end
