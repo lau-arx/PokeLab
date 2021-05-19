@@ -3,6 +3,14 @@
   width: 95%;
 }
 
+.container-home {
+  margin: 0 auto;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 body {
   margin: 0;
   padding: 0;
