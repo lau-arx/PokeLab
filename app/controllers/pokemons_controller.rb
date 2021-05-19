@@ -40,7 +40,7 @@ class PokemonsController < ApplicationController
 
   def destroy
     @pokemon.destroy
-    redirect_to pokemons_path
+    redirect_to dashboard_path
   end
 
   private
