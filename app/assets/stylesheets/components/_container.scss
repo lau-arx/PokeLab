@@ -3,9 +3,19 @@
   width: 95%;
 }
 
+.custom-container {
+  min-height: calc(100vh - 208px);
+  padding-top: 86px;
+}
+
+.container-pokemon {
+  display: flex;
+  padding: 50px;
+}
+
 .container-home {
   margin: 0 auto;
-  width: 85%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,11 +27,6 @@ body {
   min-height: 100vh;
 }
 
-.custom-container {
-  min-height: calc(100vh - 208px);
-  padding-top: 86px;
-}
-
 .container-form {
   margin-top: 100px;
 }
@@ -29,5 +34,3 @@ body {
 .container-index {
   display: flex;
 }
-
-

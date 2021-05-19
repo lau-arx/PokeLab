@@ -8,18 +8,25 @@
 
 .btn-container {
   width: 100%;
-  position: absolute;
-  bottom: 80px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
-.btn-shoot {
+.btn-container-home {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 80px;
+}
 
+.btn-shoot {
   background-color: $red;
+  margin: auto auto;
   border-radius: 8px;
-  // margin-top: 8px;
-  // margin-left: 24px;
+  margin-top: 8px;
   padding: 15px;
   font-weight: bold;
   color: white;
@@ -37,5 +44,15 @@
     color: $blue;
     background-color: rgb(214, 214, 137);
   }
+}
+
+.btn-return {
+  width: 24px;
+  height: 8px;
+  padding: 15px;
+  a {
+      color: $blue;
+      font-size: 38px;
+    }
 }
 
