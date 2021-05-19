@@ -1,6 +1,7 @@
 // Define variables for your color scheme
 
 // For example:
+// $light-red: #FF000080;
 $red: #FF0000;
 $dark-red: #CC0000;
 $dark-blue: #363B81;
@@ -14,4 +15,24 @@ $gray: #383535;
 $medium-gray: #b9b8b8;
 $light-gray: #F4F4F4;
 $white: #FFFFFF;
+$maroon: #776258;
 
+.water {
+  color: $blue;
+}
+
+.fire, .electric {
+  color: $yellow;
+}
+
+.psych {
+  color: $dark-yellow;
+}
+
+.plant {
+  color: $green;
+}
+
+.earth {
+  color: $maroon;
+}

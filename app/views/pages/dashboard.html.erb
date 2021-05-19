@@ -13,19 +13,61 @@
   </div>
 
 <div class="container">
-  <h1>Welcome <%= current_user %></h1>
+  <h1 class="dash-title">Welcome <%= current_user.first_name %></h1>
 
   <%# To do : add curent_user name once model updated  %>
 
   <div class="content displayed" id="content-1">
-    <% @pokemons.each do |pokemon| %>
-      <%= pokemon.name  %>
-    <% end %>
+    <div class="cards">
+      <% @pokemons.each do |pokemon| %>
+        <div class="card-pokedex">
+          <div class="card-buttons">
+            <%= link_to raw('<i class="fas fa-trash-alt"></i>'), pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure?" } %>
+            <%= link_to raw('<i class="fas fa-edit"></i>'), edit_pokemon_path(pokemon) %>
+          </div>
+          <div class="card-header">
+            <h3><%= pokemon.name %></h3>
+            <p><%= pokemon.health_point %>PV
+            <% case pokemon.category %>
+            <% when "Water" %>
+              <span class="water"><%= raw('<i class="fas fa-tint"></i>') %></span>
+            <% when "Fire" %>
+              <span class="fire"><%= raw('<i class="fas fa-fire"></i>') %></span>
+            <% when "Plant" %>
+              <span class="plant"><%= raw('<i class="fas fa-seedling"></i>') %></span>
+            <% when "Earth" %>
+              <span class="earth"><%= raw('<i class="fas fa-mountains"></i>')  %></span>
+            <% when "Psych" %>
+              <span class="psych"><%= raw('<i class="fas fa-podcast"></i>')  %></span>
+            <% else %>
+              <span class="electric"></span><%= raw('<i class="fas fa-bolt"></i>') %></span>
+            <% end %></p>
+          </div>
+          <div class="image">
+            <% if pokemon.photo.attached? %>
+              <%= cl_image_tag pokemon.photo.key %>
+            <%else%>
+              <%= cl_image_path "default_photo.png" %>
+            <%end%>
+          </div>
+          <div class="card-description">
+            <h5><i class="fas fa-crown"></i> <%= pokemon.special_attack %></h5>
+            <p><%= pokemon.description %></p>
+          </div>
+          <div class="card-price">
+            <p><strong><%= rand(1..5) %></strong><i class="fas fa-star"> </i><em><%= rand(10..100) %> reviews</em></p>
+            <h5><%= pokemon.price_per_day%>€</h5>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div class="content hidden" id="content-2">
       <% @bookings.each do |booking| %>
-      <%= booking.start_date  %>
+      <%= booking.start_date %>
+      <%= booking.end_date %>
+      <%= booking.total_price %>
     <% end %>
     WIP: Bookings
   </div>
@@ -33,6 +75,8 @@
   <div class="content hidden" id="content-3">
     WIP: Reviews
   </div>
+
 </div>
+
 
 
