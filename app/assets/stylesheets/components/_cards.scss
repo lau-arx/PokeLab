@@ -4,7 +4,8 @@
   grid-auto-rows: auto;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin-top: 25px;
+  margin-top: 60px;
+  margin-bottom: 60px;
   justify-content: center;
   // margin-bottom: 30vh;
 }
@@ -17,15 +18,16 @@
   object-fit: contain;
   background-position: center;
   border-radius: 4px;
-  margin-bottom: 25px;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.13);
+  // margin-bottom: 25px;
+  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.18);
   transition: 500ms;
+  filter: brightness(85%);
   p {
     color: white;
     text-align: center;
     position: relative;
     top: 200px;
-    font-size: 18px;
+    font-size: 19px;
   }
 
   hr {
@@ -36,7 +38,9 @@
   }
 
   &:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
+    box-shadow: 3px 4px 4px rgba(32, 32, 32, 0.30);
+    filter: brightness(130%);
   }
 }
 .flying-card {
@@ -56,7 +60,7 @@
 }
 
 .card-owner {
-  margin: 0 auto;
+  // margin: 0 auto;
   height: 400px;
   width: 100%;
   color: white;
@@ -66,13 +70,21 @@
   background-image: linear-gradient(90deg, $dark-blue 18%, rgba(255,255,255,0.7) 70%), asset-url("card-become-renter.jpg");
   background-size: cover;
   object-fit: contain;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.13);
+  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.18);
+  transition: 500ms;
 
   h2, p, .btn {
     position: relative;
     top: 150px;
     left: 25px;
   }
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 3px 4px 4px rgba(32, 32, 32, 0.30);
+    filter: brightness(100%);
+  }
+
 }
 
 .card-pokemon {
