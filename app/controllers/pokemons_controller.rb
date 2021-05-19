@@ -3,12 +3,14 @@ class PokemonsController < ApplicationController
   def index
     @pokemons = Pokemon.all
     @pokemons = policy_scope(Pokemon).order(created_at: :desc)
+    @pokemons = @pokemons.near(params[:search], 25)
     @markers = @pokemons.geocoded.map do |pokemon|
       {
         lat: pokemon.latitude,
         lng: pokemon.longitude
       }
     end
+    # raise
   end
 
   def show
