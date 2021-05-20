@@ -1,4 +1,8 @@
-<div class="container-show mt-5 col-4 offset-4">
+<div class="btn-return">
+  <%= link_to raw('<i class="fas fa-arrow-left"></i>'), dashboard_path %>
+</div>
+
+<div class="mt-5 col-4 offset-4">
 
   <h1>Edit Your Pokemon</h1>
 
@@ -6,20 +10,19 @@
   <%= f.input :name %>
   <%= f.input :category, collection: ["Electric","Fire","Earth","Psych","Plant","Water"] %>
   <%= f.input :description %>
+  <%= f.input :address %>
   <%= f.input :height%>
   <%= f.input :weight %>
   <%= f.input :special_attack %>
   <%= f.input :price_per_day %>
   <%= f.input :health_point %>
-  <%= f.submit "Edit Your Pokemon", class: "btn btn-primary mt-5" %>
+  <%= f.submit "Edit Pokemon", class: "btn btn-primary mt-5" %>
   <% end %>
 
 </div>
 
 <div class="btn-container mt-5 col-4 offset-4">
-  <p><%= link_to "Return details Of Pokemon", pokemon_path, class: "btn btn-primary"  %></p>
+  <p><%= link_to "Show Pokemon", pokemon_path, class: "btn btn-primary"  %></p>
 </div>
 
-<div class="btn-container mt-5 col-4 offset-4">
-  <p><%= link_to "Return to list", pokemons_path, class: "btn btn-primary"  %></p>
-</div>
+

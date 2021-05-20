@@ -15,8 +15,8 @@
       <% else %>
         <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= image_path "verso-carte.png" %>')">
       <% end %>
-          <h3><%= link_to pokemon.name.upcase , pokemon_path(pokemon) %></h3>
-          <p><%= link_to pokemon.category.upcase , pokemon_path(pokemon) %></p>
+          <h3><%= link_to pokemon.name.upcase , new_pokemon_booking_path(pokemon.id) %></h3>
+          <p><%= link_to pokemon.category.upcase , new_pokemon_booking_path(pokemon.id)%></p>
           <p><%= pokemon.price_per_day %>/day</p>
           </div>
       <% end %>
