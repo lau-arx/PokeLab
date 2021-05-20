@@ -4,7 +4,7 @@ class Booking < ApplicationRecord
 
   validates :start_date, presence: true
   validates :end_date, presence: true
-  # validates :end_date_after_start_date
+  validates :end_date_after_start_date
 
   # def create
   #   @booking = Booking.new(pokemon_id: params[:id])

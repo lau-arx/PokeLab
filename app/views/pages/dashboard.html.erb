@@ -65,13 +65,28 @@
 
   <div class="content hidden" id="content-2">
       <% @bookings.each do |booking| %>
-      <%= Pokemon.find(booking.pokemon_id).name%>
-      <p>From : <%= booking.start_date %></p>
-      <p>To : <%= booking.end_date %></p>
-      <p>At : <%= Pokemon.find(booking.pokemon_id).address %></p>
-      <%= booking.total_price %>
+      <% if Pokemon.find(booking.pokemon_id).user_id != current_user.id %>
+        <%= Pokemon.find(booking.pokemon_id).name%>
+        <p>From : <%= booking.start_date %></p>
+        <p>To : <%= booking.end_date %></p>
+        <p>At : <%= Pokemon.find(booking.pokemon_id).address %></p>
+        <p>Status : <%= booking.status %></p>
+        <p>Owner : <%= User.find(Pokemon.find(booking.pokemon_id).user_id).first_name %> <%= User.find(Pokemon.find(booking.pokemon_id).user_id).last_name %></p>
+        <p>Duration : <%= booking.end_date - booking.start_date %></p>
+        <%= booking.total_price %>
+        <%= link_to "Delete your request", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% else %>
+        <%= Pokemon.find(booking.pokemon_id).name%>
+        <p>From : <%= booking.start_date %></p>
+        <p>To : <%= booking.end_date %></p>
+        <p>At : <%= Pokemon.find(booking.pokemon_id).address %></p>
+        <p>Status : <%= booking.status %></p>
+        <p>Renter : <%= User.find(Pokemon.find(booking.pokemon_id).user_id).first_name %> <%= User.find(Pokemon.find(booking.pokemon_id).user_id).last_name %></p>
+        <%= booking.total_price %>
+        <%= link_to "Confirm the reservation", pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking), method: :patch, data: { confirm: "Are you sure?" } %>
+        <%= link_to "Delete the reservation", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
     <% end %>
-    WIP: Bookings
   </div>
 
   <div class="content hidden" id="content-3">
@@ -79,6 +94,3 @@
   </div>
 
 </div>
-
-
-
