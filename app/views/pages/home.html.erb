@@ -1,27 +1,7 @@
+
 <div class="banner">
 
-    <form action="/pokemons" class="flex-form">
-
-      <input type="search" name ="search" placeholder="Location" />
-
-      <label for="from">From</label>
-      <input type="date" name="from" placeholder="Location" />
-
-      <label for="to">To</label>
-      <input type="date" name="to" />
-
-      <select name="type" id="type">
-        <option value="0">All</option>
-        <option value="1">Water</option>
-        <option value="2">Fire</option>
-        <option value="3">Earth</option>
-        <option value="4">Psych</option>
-        <option value="5">Plant</option>
-      </select>
-
-        <input type="submit" value="Search" />
-
-    </form>
+   <%= render "shared/search_form" %>
 
 </div>
 
