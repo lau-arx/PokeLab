@@ -18,12 +18,32 @@ class BookingsController < ApplicationController
     authorize @booking
     authorize @pokemon
     @booking.user = current_user
-    @booking.pokemon= @pokemon
+    @booking.status = "Pending"
+    @booking.pokemon = @pokemon
     if @booking.save!
       redirect_to dashboard_path
     else
       raise
     end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    raise
+    @booking.status = "Confirmed"
+    if @booking.save!
+      redirect_to dashboard_path
+    else
+      raise
+    end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    authorize @booking
+    @booking.destroy
+    redirect_to dashboard_path
   end
 
   private
