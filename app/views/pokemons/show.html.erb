@@ -1,70 +1,66 @@
 
-<div class="container-pokemon">
-  <div class = "cards-all">
+<div class="container-show">
+  <div class="card-show-all">
 
-    <div class = "card-left">
-      <h2><%= @pokemon.name %></h2>
-      <% if @pokemon.photo.attached? %>
-        <p><%= cl_image_tag @pokemon.photo.key, width: 400, height: 300, crop: :fill %></p>
-      <% else %>
-        <%= cl_image_tag("tfoqtj3tttbjd0satx2t", width: 400, height: 300, crop: :fill) %>
-      <% end %>
-      <%if @pokemon.category == "Electric"%>
-        <div class="electric">
-      <%elsif @pokemon.category == "Fire"%>
-        <div class="fire">
-      <%elsif @pokemon.category == "Earth"%>
-        <div class="earth">
-      <%elsif @pokemon.category == "Psych"%>
-        <div class="psych">
-      <%elsif @pokemon.category == "Plant"%>
-        <div class="plant">
-      <%else%>
-        <div class="water">
-      <%end%>
-      <div class="details ">
-          <div class= "detail-left">
-            <p><strong>Category</strong> : <%=@pokemon.category%></p>
-            <p><strong>Height</strong> : <%= @pokemon.height %></p>
-            <p><strong>Weight</strong> : <%= @pokemon.weight %></p>
-          </div>
-          <div class = "detail-right">
-            <p><strong>Special Attack</strong> : <%= @pokemon.special_attack %></p>
-            <p><strong>Price per day</strong> : <%= @pokemon.price_per_day %></p>
-            <p><strong>Health Points</strong> : <%= @pokemon.health_point %></p>
-          </div>
+    <div class = "cards-left">
+      <div class="pokemon-card">
+        <div class = "card-image">
+          <% if @pokemon.photo.attached? %>
+            <%= cl_image_tag @pokemon.photo.key, height: 300, crop: :fill %>
+          <% else %>
+            <%= cl_image_tag("tfoqtj3tttbjd0satx2t", width: 400, height: 300, crop: :fill) %>
+          <% end %>
+        </div>
+        <div class="pokemon-description">
+          <p><%= @pokemon.description %></p>
         </div>
       </div>
-    </div>
-
-    <div class="card-right">
-      <div class="cards-description">
-        <p><%= @pokemon.description %></p>
+      <div class="button-all-down">
+        <div class= "button-blue"></div>
+        <div class= "button-green"></div>
+        <div class= "button-orange"></div>
+        <div class= "button-grey"></div>
       </div>
     </div>
 
+
+    <div class = "cards-right">
+        <h2><%= @pokemon.name.capitalize %></h2>
+
+        <%if @pokemon.category == "Electric"%>
+          <div class="electric">
+        <%elsif @pokemon.category == "Fire"%>
+          <div class="fire">
+        <%elsif @pokemon.category == "Earth"%>
+          <div class="earth">
+        <%elsif @pokemon.category == "Psych"%>
+          <div class="psych">
+        <%elsif @pokemon.category == "Plant"%>
+          <div class="plant">
+        <%else%>
+          <div class="water">
+        <%end%>
+
+            <div class="details">
+                <div class= "detail-left">
+                  <p><strong>Category</strong> : <%=@pokemon.category%></p>
+                  <p><strong>Height</strong> : <%= @pokemon.height %> m</p>
+                  <p><strong>Weight</strong> : <%= @pokemon.weight %> kg</p>
+                </div>
+                <div class = "detail-right">
+                  <p><strong>Special Attack</strong> : <%= @pokemon.special_attack %></p>
+                  <p><strong>Price per day</strong> : <%= @pokemon.price_per_day %> €</p>
+                  <p><strong>Health Points</strong> : <%= @pokemon.health_point %></p>
+                </div>
+              </div>
+            </div>
+          <div class="show-button">
+            <p><%= link_to raw('<i class="fas fa-arrow-left"></i>'), pokemons_path %></p>
+            <p><%= link_to raw('<i class="fas fa-edit"></i>'), edit_pokemon_path(@pokemon) %></p>
+            <p><%= link_to raw('<i class="fas fa-trash-alt"></i>'), pokemon_path(@pokemon), method: :delete, data: { confirm: "Are you sure?" } %></p>
+          </div>
+        </div>
+    </div>
   </div>
 </div>
-
-<div class="btn-container m-5">
-  <p><%= link_to "Return to list", pokemons_path, class: "btn btn-primary"   %></p>
-  <p><%= link_to "Edit Your Pokemon", edit_pokemon_path, class: "btn btn-primary"  %></p>
-  <p><%= link_to "Delete #{@pokemon.name}",
-            pokemon_path(@pokemon),
-            method: :delete,
-            data: { confirm: "Are you sure?" }%></p>
-
-</div>
-
-<div>
-   <form action="/pokemons/:pokemon_id/bookings/new" class="flex-form">
-      <label for="from">From</label>
-      <input type="date" name="from" placeholder="Location" />
-      <label for="to">To</label>
-      <input type="date" name="to" />
-      <input type="submit" value="Book <%= @pokemon.name %>" />
-    </form>
-</div>
-
-
 
