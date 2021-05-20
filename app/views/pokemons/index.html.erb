@@ -1,30 +1,36 @@
+<div class="form-index">
 
-<h1>Around you:</h1>
-<%if @pokemons.length > 0%>
-<h3>+<%=@pokemons.length%> Pokemons in your area</h3>
-<% else %>
-<h3><%="No pokemon available in your area"%></h3>
-  <% end %>
-<div class="container-index">
-  <div class="cards cards-index">
+ <%= render "shared/search_form" %>
 
-
-      <% @pokemons.each do |pokemon| %>
-      <%if pokemon.photo.attached? %>
-        <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= cl_image_path pokemon.photo.key%>')">
-      <% else %>
-        <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= image_path "verso-carte.png" %>')">
+</div>
+  <div class="index-body-container">
+    <h1>Around you:</h1>
+    <%if @pokemons.length > 0%>
+    <h3>+<%=@pokemons.length%> Pokemons in your area</h3>
+    <% else %>
+    <h3><%="No pokemon available in your area"%></h3>
       <% end %>
-          <h3><%= link_to pokemon.name.upcase , pokemon_path(pokemon) %></h3>
-          <p><%= link_to pokemon.category.upcase , pokemon_path(pokemon) %></p>
-          <p><%= pokemon.price_per_day %>/day</p>
+    <div class="container-index">
+      <div class="cards cards-index">
+        <% @pokemons.each do |pokemon| %>
+        <%if pokemon.photo.attached? %>
+          <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= cl_image_path pokemon.photo.key%>')">
+        <% else %>
+          <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= image_path "verso-carte.png" %>')">
+        <% end %>
+            <h3><%= link_to pokemon.name.upcase , pokemon_path(pokemon) %></h3>
+            <p><%= link_to pokemon.category.upcase , pokemon_path(pokemon) %></p>
+            <p><%= pokemon.price_per_day %>/day</p>
           </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
 
-  <div class="map-index" id="map"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="map-index" id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
   </div>
 </div>
 
