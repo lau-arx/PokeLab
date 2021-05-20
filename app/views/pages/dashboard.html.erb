@@ -44,18 +44,20 @@
                 <span class="font-psych"><%= raw('<i class="fas fa-podcast"></i>')  %></span>
               <% when "Electric" %>
                 <span class="font-electric"></span><%= raw('<i class="fas fa-bolt"></i>') %></span>
+              <% else %>
+                <span class="font-electric"></span><%= raw('<i class="fas fa-bolt"></i>') %></span>
               <% end %></p>
             </div>
             <div class="image">
               <% if pokemon.photo.attached? %>
                 <%= cl_image_tag pokemon.photo.key %>
               <% else %>
-                <%= image_path "verso-carte.png" %>
+                <%= image_tag "verso-carte.png" %>
               <% end %>
             </div>
             <div class="card-description">
               <h5><i class="fas fa-crown"></i> <%= pokemon.special_attack %></h5>
-              <p><%= pokemon.description %></p>
+              <p><%= pokemon.description.truncate(130) %></p>
             </div>
             <div class="card-price">
               <p><strong><%= rand(1..5) %></strong><i class="fas fa-star"> </i><em><%= rand(10..100) %> reviews</em></p>

@@ -187,6 +187,8 @@
   }
 
   .card-description {
+    margin-top: 8px;
+    height: 82px;
     h5 {
       font-weight: bold;
       font-size: 16px;
@@ -197,6 +199,7 @@
   }
 
   .card-price {
+    margin-top: 8px;
     display: flex;
     align-items: flex-end;
     h5 {
