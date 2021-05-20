@@ -32,5 +32,15 @@ body {
 }
 
 .container-index {
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
 }
+
+.index-body-container {
+  margin-top: 30px;
+  margin: auto 0;
+  width: 100%;
+}
+

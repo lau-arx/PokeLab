@@ -11,20 +11,38 @@
 .flex-form {
   justify-content: center;
   // padding-left: 50;
-  padding-top: 120px;
+  // padding-top: 120px;
   display: flex;
   // border: 20px solid rgba(0,0,0,0.2);
   // border-radius: 5px;
   label {
     display: none;
   }
-
 }
 
-input[type=search] {
-  flex-basis: 350px;
+.form-home {
+  padding-top: 120px;
+}
+
+.flex-form-search {
+  padding-top: 20px;
+}
+
+input[type=search-location] {
+  // flex-basis: 350px;
   border-radius: 24px 0 0 24px;
   // padding-left: 50px;
+}
+
+input[type=search-pokemon] {
+  border: 0;
+  padding: 10px;
+  line-height: 30px;
+  font-size: 16px;
+  border-radius: 0;
+  outline: 0;
+  background-color: rgba(white, 0.75);
+  margin-left: 1px;
 }
 
 .flex-form > * {
@@ -54,6 +72,7 @@ input[type=search] {
   }
 }
 
+
 .btn-submit-red {
   background: rgba($red, 0.75);
   color: white;
@@ -62,4 +81,16 @@ input[type=search] {
   &:hover {
     background: $red ;
   }
-}
+
+.form-index {
+  // margin-top: 0px;
+  // margin-bottom: 60px;
+  height: 100px;
+  position: fixed;
+  padding-top: 20px;
+  top: 86px;
+  width: 100%;
+  z-index: 1;
+  background-color: $white;
+  border-top: 1px solid $light-gray;
+  }

@@ -32,6 +32,11 @@
   color: white;
   font-size: 18px;
 
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   &:hover {
     background-color: $dark-red;
     color: white;

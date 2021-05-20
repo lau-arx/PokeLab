@@ -1,9 +1,13 @@
 class PokemonsController < ApplicationController
   before_action :find_pokemon, only: [:show, :edit, :update, :destroy]
   def index
-    @pokemons = Pokemon.all
     @pokemons = policy_scope(Pokemon).order(created_at: :desc)
-    @pokemons = @pokemons.near(params[:search], 25)
+
+    @pokemons = @pokemons.where("name ILIKE ?", "%#{params[:pokemon_name]}%") if params[:pokemon_name]
+    @pokemons = @pokemons.where("address ILIKE ?", "%#{params[:location]}%") if params[:location]
+    @pokemons = @pokemons.where("category ILIKE ?", "%#{params[:category]}%") if params[:category]
+
+    # @pokemons = @pokemons.near(params[:search], 25)
     @markers = @pokemons.geocoded.map do |pokemon|
       {
         lat: pokemon.latitude,
@@ -25,7 +29,7 @@ class PokemonsController < ApplicationController
     authorize @pokemon
     @pokemon.user = current_user
     if @pokemon.save
-      redirect_to pokemons_path
+      redirect_to dashboard_path
     else
       render :new
     end
