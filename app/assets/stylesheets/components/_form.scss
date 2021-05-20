@@ -11,14 +11,21 @@
 .flex-form {
   justify-content: center;
   // padding-left: 50;
-  padding-top: 120px;
+  // padding-top: 120px;
   display: flex;
   // border: 20px solid rgba(0,0,0,0.2);
   // border-radius: 5px;
   label {
     display: none;
   }
+}
 
+.form-home {
+  padding-top: 120px;
+}
+
+.flex-form-search {
+  padding-top: 20px;
 }
 
 input[type=search-location] {
@@ -66,5 +73,14 @@ input[type=search-pokemon] {
 }
 
 .form-index {
-  padding-top: -40px;
+  // margin-top: 0px;
+  // margin-bottom: 60px;
+  height: 100px;
+  position: fixed;
+  padding-top: 20px;
+  top: 86px;
+  width: 100%;
+  z-index: 1;
+  background-color: $white;
+  border-top: 1px solid $light-gray;
 }

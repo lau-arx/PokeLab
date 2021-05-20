@@ -7,7 +7,6 @@ class PokemonsController < ApplicationController
     @pokemons = @pokemons.where("address ILIKE ?", "%#{params[:location]}%") if params[:location]
     @pokemons = @pokemons.where("category ILIKE ?", "%#{params[:category]}%") if params[:category]
 
-
     # @pokemons = @pokemons.near(params[:search], 25)
     @markers = @pokemons.geocoded.map do |pokemon|
       {
