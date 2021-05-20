@@ -84,8 +84,8 @@
         <p>Status : <%= booking.status %></p>
         <p>Renter : <%= User.find(Pokemon.find(booking.pokemon_id).user_id).first_name %> <%= User.find(Pokemon.find(booking.pokemon_id).user_id).last_name %></p>
         <%= booking.total_price %>
-        <%= link_to "Confirm the reservation", pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: "Confirmed"), method: :patch, data: { confirm: "Are you sure?" } %>
-        <%= link_to "Deny the reservation", pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: "Denied"), method: :patch, data: { confirm: "Are you sure?" } %>
+        <%= link_to "Confirm the reservation", pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: ["Confirmed", false]), method: :patch, data: { confirm: "Are you sure?" } %>
+        <%= link_to "Deny the reservation", pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: ["Denied", true]), method: :patch, data: { confirm: "Are you sure?" } %>
         <%= link_to "Delete the reservation", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
     <% end %>
