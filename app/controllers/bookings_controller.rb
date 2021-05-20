@@ -13,7 +13,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.valid?
     @pokemon = Pokemon.find(params[:pokemon_id])
     authorize @booking
     authorize @pokemon
@@ -23,19 +22,19 @@ class BookingsController < ApplicationController
     if @booking.save!
       redirect_to dashboard_path
     else
-      raise
+      render :new
     end
   end
 
   def update
     @booking = Booking.find(params[:id])
+    # raise
     authorize @booking
-    raise
-    @booking.status = "Confirmed"
+    @booking.status =  params[:status]
     if @booking.save!
-      redirect_to dashboard_path
+      redirect_to dashboard_path(tab: 'content-2')
     else
-      raise
+      render :new
     end
   end
 
@@ -43,7 +42,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path(tab: 'content-2')
   end
 
   private
