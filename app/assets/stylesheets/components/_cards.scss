@@ -10,6 +10,12 @@
   // margin-bottom: 30vh;
 }
 
+.overflow-pokemons {
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 60vh;
+}
+
 .home-card {
   justify-self: center;
   height: 300px;
