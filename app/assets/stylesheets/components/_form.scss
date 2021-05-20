@@ -72,6 +72,16 @@ input[type=search-pokemon] {
   }
 }
 
+
+.btn-submit-red {
+  background: rgba($red, 0.75);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  &:hover {
+    background: $red ;
+  }
+
 .form-index {
   // margin-top: 0px;
   // margin-bottom: 60px;
@@ -83,4 +93,4 @@ input[type=search-pokemon] {
   z-index: 1;
   background-color: $white;
   border-top: 1px solid $light-gray;
-}
+  }

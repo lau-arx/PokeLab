@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.status = "Pending"
     @booking.pokemon = @pokemon
-    if @booking.save!
+    if @booking.save
       redirect_to dashboard_path
     else
       render :new
@@ -35,7 +35,7 @@ class BookingsController < ApplicationController
 
     @booking.status =  params[:status][0]
     @pokemon.available = params[:status][1]
-    
+
     if @booking.save! && @pokemon.save!
       redirect_to dashboard_path(tab: 'content-2')
     else
