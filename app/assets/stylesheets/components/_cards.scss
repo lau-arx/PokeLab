@@ -270,3 +270,77 @@
   background-color: #70F7C1;
   border-radius: 15px;
 }
+
+
+.card-booking {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 8px 0 8px 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.18);
+  .from {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    p {
+      margin:0;
+    }
+  }
+
+  .avatar-booking {
+    border-radius: 50%;
+    height: 50px;
+  }
+
+  .actions-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .status {
+      .fa-check-circle {
+      color: $green;
+      font-size: 72px;
+    }
+    .fa-times-circle {
+      color: $red;
+      font-size: 72px;
+    }
+    .fa-question-circle{
+      color: $orange;
+      font-size: 72px;
+    }
+    }
+  }
+
+  .pokebook {
+    border-right: 1px rgb(197, 197, 197) solid;
+    padding-right: 16px;
+    width:30%;
+    object-fit:contain;
+  }
+  .booking-content {
+    width: 50%;
+  }
+  .book-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 24px;
+    a {
+    .fa-check-circle {
+      color: $green;
+    }
+    .fa-times-circle {
+      color: $red;
+    }
+  }
+  }
+
+  .action-details {
+    width:20%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
