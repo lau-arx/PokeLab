@@ -53,3 +53,13 @@ input[type=search] {
     background: $red ;
   }
 }
+
+.btn-submit-red {
+  background: rgba($red, 0.75);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  &:hover {
+    background: $red ;
+  }
+}

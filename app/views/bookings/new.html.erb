@@ -52,28 +52,31 @@
                   <p><strong>Price per day</strong> : <%= @pokemon.price_per_day %> €</p>
                   <p><strong>Health Points</strong> : <%= @pokemon.health_point %></p>
                 </div>
-              </div>
             </div>
+          </div>
           <div class="show-button">
             <p><%= link_to raw('<i class="fas fa-arrow-left"></i>'), pokemons_path %></p>
             <p><div class= "button-blue-fat"></div></p>
           </div>
-        </div>
+          <div class="booking">
+              <div class="row justify-content-center">
+                <div class="centered-booking">
+                  <div class="booking-form">
+                    <%= simple_form_for [@pokemon, @booking], html: {} do |f| %>
+                      <div class="d-flex">
+                        <%= f.input :start_date, as: :date, html5: true, wrapper_html: { class: "flex-grow-1"} %>
+                        <%= f.input :end_date, as: :date, html5: true, wrapper_html: { class: "flex-grow-1"} %>
+                      </div>
+                      <div>
+                        <%= f.submit "Confirm booking", class: "btn btn-primary btn-block btn-submit-red"%>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+          </div>
     </div>
   </div>
-</div>
-
-
-
-<div>
-   <form action="/pokemons/<%=@pokemon.id%>/bookings" class="flex-form" method="POST">
-   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-      <label for="from">From</label>
-      <input type="date" name="booking[start_date]" id="from" placeholder="Location">
-      <label for="to">To</label>
-      <input type="date" name="booking[end_date]" id="to"  />
-      <input type="submit" value="Confirm booking of <%= @pokemon.name %>">
-    </form>
 </div>
 
 

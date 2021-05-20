@@ -226,6 +226,7 @@
   padding: 50px;
   border-radius: 15px;
   justify-content: center;
+}
 
 .card-show-all{
   background-color:$red-pokedex;
@@ -283,10 +284,10 @@
           color: $gray;
           box-shadow: -2px 1px 2px $blue-shadow-pokedex;
         }
-
       }
     }
   }
+}
 
 
   .button-blue-fat{
@@ -360,48 +361,62 @@
         box-shadow: -2px 1px 2px $gray;
       }
     }
-  }
 
-  .electric{
-    background-color: #FEE94E;
-    border-radius: 15px;
-    color: $grey-pokedex-text;
-    border: solid $grey-pokedex-border 2px;
-  }
-
-  .fire{
-    background-color: #F3933D;
-    border-radius: 15px;
-    color: $grey-pokedex-text;
-    border: solid $grey-pokedex-border 2px;
-  }
-
-  .earth{
-    background-color: #C06A45;
-    border-radius: 15px;
-    color: white;
-    border: solid $grey-pokedex-border 2px;
-  }
-
-  .psych{
-    background-color: #F6C7F2;
-    border-radius: 15px;
-    color: $grey-pokedex-text;
-    border: solid $grey-pokedex-border 2px;
-  }
-
-  .water{
-    background-color: #86BBF9;
-    border-radius: 15px;
-    color: $grey-pokedex-text;
-    border: solid $grey-pokedex-border 2px;
-  }
-
-  .plant{
-    background-color: #70F7C1;
-    border-radius: 15px;
-    color: $grey-pokedex-text;
-    border: solid $grey-pokedex-border 2px;
-  }
 }
+
+.electric{
+  background-color: #FEE94E;
+  border-radius: 15px;
+  color: $grey-pokedex-text;
+  border: solid $grey-pokedex-border 2px;
+}
+
+.fire{
+  background-color: #F3933D;
+  border-radius: 15px;
+  color: $grey-pokedex-text;
+  border: solid $grey-pokedex-border 2px;
+}
+
+.earth{
+  background-color: #C06A45;
+  border-radius: 15px;
+  color: white;
+  border: solid $grey-pokedex-border 2px;
+}
+
+.psych{
+  background-color: #F6C7F2;
+  border-radius: 15px;
+  color: $grey-pokedex-text;
+  border: solid $grey-pokedex-border 2px;
+}
+
+.water{
+  background-color: #86BBF9;
+  border-radius: 15px;
+  color: $grey-pokedex-text;
+  border: solid $grey-pokedex-border 2px;
+}
+
+.plant{
+  background-color: #70F7C1;
+  border-radius: 15px;
+  color: $grey-pokedex-text;
+  border: solid $grey-pokedex-border 2px;
+}
+
+.booking {
+  background-color: $grey-pokedex;
+  height: 300px;
+  border: solid #B1B0B1 4px;
+  border-radius: 20px;
+  padding-right: 25px;
+  padding-left: 25px;
+  .centered-booking{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin:10px;
+  }
 }
