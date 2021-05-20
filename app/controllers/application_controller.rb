@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   include Pundit
 
-  before_action :authenticate_user!, except: :home
+  before_action :authenticate_user!, except: [ :home, :index ]
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 

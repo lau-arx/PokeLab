@@ -1,11 +1,15 @@
-<div class="container-show mt-5 col-4 offset-4">
+<div class="btn-return">
+  <%= link_to raw('<i class="fas fa-arrow-left"></i>'), dashboard_path %>
+</div>
+
+<div class="mt-5 col-4 offset-4">
 
   <h1>Add New Pokemon</h1>
 
   <%= simple_form_for(@pokemon) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
-  <%= f.input :category %>
+  <%= f.input :category, collection: ["Electric","Fire","Earth","Psych","Plant","Water"] %>
   <%= f.input :description %>
   <%= f.input :height%>
   <%= f.input :weight %>
