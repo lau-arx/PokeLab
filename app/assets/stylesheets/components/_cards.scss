@@ -221,52 +221,175 @@
   }
 }
 
-.cards-all {
-  display:flex;
-}
+.container-show {
+  display: flex;
+  padding: 50px;
+  border-radius: 15px;
+  justify-content: center;
 
-.details {
-  width:100%;
-  img {
-    justify-content: center;
-  }
+.card-show-all{
+  background-color:$red-pokedex;
+  width: 970px;
+  height: 600px;
+  border-radius: 50px;
+  border: solid #9C211E 4px;
   display: flex;
   justify-content: center;
+  padding: 40px 20px;
+
+  .pokemon-photo {
+    border-radius: 15px;
+  }
+  .cards-right{
+    display: flex;
+    flex-direction: column;
+    h2 {
+      color: white;
+      font-size: 45px;
+      font-weight: bold;
+      margin: 10px;
+    }
+    .details {
+      display: flex;
+      width: 450px;
+      justify-content: space-evenly;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .show-button {
+      justify-content: space-evenly;
+      display: flex;
+      margin: 20px;
+        a {
+        .fa-trash-alt {
+          background-color: $blue-pokedex;
+          padding: 15px;
+          border-radius: 50%;
+          color: $gray;
+          box-shadow: -2px 1px 2px $blue-shadow-pokedex;
+        }
+        .fa-edit {
+          background-color: $blue-pokedex;
+          padding: 15px;
+          border-radius: 50%;
+          color: $gray;
+          box-shadow: -2px 1px 2px $blue-shadow-pokedex;
+        }
+        .fa-arrow-left {
+          background-color: $blue-pokedex;
+          padding: 15px;
+          border-radius: 50%;
+          color: $gray;
+          box-shadow: -2px 1px 2px $blue-shadow-pokedex;
+        }
+      }
+    }
+  }
+  .cards-left{
+    .pokemon-card {
+        height: 450px;
+        width: 360px;
+        background-color: #FCFAFC;
+        border: solid #B1B0B1 4px;
+        border-radius: 20px;
+        margin-right: 35px;
+        padding: 20px;
+        text-align: center;
+        .card-image {
+          img {
+            border-radius: 20px;
+            border: solid $grey-pokedex-border 1px;
+          }
+        }
+        .pokemon-description {
+          color: $grey-pokedex-text;
+          width: 100%;
+          text-align: left;
+          margin-top: 10px;
+        }
+    }
+
+    .button-all-down{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 20px;
+      width: 360px;
+      .button-blue{
+        background-color: $blue-pokedex;
+        padding: 15px;
+        border-radius: 50%;
+        color: $gray;
+        box-shadow: -2px 1px 2px $blue-shadow-pokedex;
+      }
+      .button-green {
+        background-color: $green-pokedex;
+        width: 75px;
+        height: 20px;
+        border-radius: 20px;
+        border: solid $grey-pokedex-text 1px;
+        box-shadow: -2px 1px 2px $green-pokedex-shadow;
+      }
+      .button-orange {
+        background-color: $orange-pokedex;
+        width: 75px;
+        height: 20px;
+        border-radius: 20px;
+        border: solid $grey-pokedex-text 1px;
+        box-shadow: -2px 1px 2px $orange-pokedex-shadow;
+      }
+      .button-grey {
+        background-color: $medium-gray;
+        width: 75px;
+        height: 20px;
+        border-radius: 20px;
+        border: solid $grey-pokedex-text 1px;
+        box-shadow: -2px 1px 2px $gray;
+      }
+    }
+  }
+
+  .electric{
+    background-color: #FEE94E;
+    border-radius: 15px;
+    color: $grey-pokedex-text;
+    border: solid $grey-pokedex-border 2px;
+  }
+
+  .fire{
+    background-color: #F3933D;
+    border-radius: 15px;
+    color: $grey-pokedex-text;
+    border: solid $grey-pokedex-border 2px;
+  }
+
+  .earth{
+    background-color: #C06A45;
+    border-radius: 15px;
+    color: white;
+    border: solid $grey-pokedex-border 2px;
+  }
+
+  .psych{
+    background-color: #F6C7F2;
+    border-radius: 15px;
+    color: $grey-pokedex-text;
+    border: solid $grey-pokedex-border 2px;
+  }
+
+  .water{
+    background-color: #86BBF9;
+    border-radius: 15px;
+    color: $grey-pokedex-text;
+    border: solid $grey-pokedex-border 2px;
+  }
+
+  .plant{
+    background-color: #70F7C1;
+    border-radius: 15px;
+    color: $grey-pokedex-text;
+    border: solid $grey-pokedex-border 2px;
+  }
 }
 
-.card-right{
-  margin-top: 0;
-  margin-left: 10px;
-  margin-bottom: 1rem;
-}
 
-
-.electric{
-  background-color: #FEE94E;
-  border-radius: 15px;
-}
-
-.fire{
-  background-color: #ED4445;
-  border-radius: 15px;
-}
-
-.earth{
-  background-color: #D69E87;
-  border-radius: 15px;
-}
-
-.psych{
-  background-color: #F6C7F2;
-  border-radius: 15px;
-}
-
-.water{
-  background-color: #86BBF9;
-  border-radius: 15px;
-}
-
-.plant{
-  background-color: #70F7C1;
-  border-radius: 15px;
-}
