@@ -1,0 +1,26 @@
+
+<div class="container-show">
+  <div class="card-show-review">
+
+    <div class="title-review">
+      <h2>Reviews</h2>
+    </div>
+    <div class="screen">
+      <ul class="list-unstyle">
+        <% @pokemon.reviews.each do |review|%>
+          <li class="one-review">
+            <p><strong><%=review.comment%></strong></p>
+            <p><em><%=review.user.user_name%></em></p>
+            <p><%=review.rating%> <i class="fas fa-star"></i></p>
+          </li>
+        <%end%>
+      </ul>
+    </div>
+    <div class="button-show-review">
+    <%= link_to raw('<i class="fas fa-arrow-left"></i>'), dashboard_path %>
+    </div>
+
+  </div>
+</div>
+
+

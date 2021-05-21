@@ -152,8 +152,8 @@
   justify-self: center;
   object-fit: contain;
   border-radius: 4px;
-  margin: 0px 25px;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.13);
+  margin-bottom: 25px;
+  box-shadow: 1px 1px 12px #555;
   transition: 200ms;
 
   .card-description {
@@ -188,11 +188,12 @@
 
 .card-pokedex {
   background-color: $white;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.13);
+  box-shadow: 1px 1px 12px #555;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  margin-top: 16px;
   margin-bottom: 16px;
   padding: 16px;
   width:100%;
@@ -357,6 +358,10 @@
           color: $gray;
           box-shadow: -2px 1px 2px $blue-shadow-pokedex;
         }
+        .fa-trash-alt:hover{
+          color:white;
+          font-weight:bold;
+        }
         .fa-edit {
           background-color: $blue-pokedex;
           padding: 15px;
@@ -364,12 +369,20 @@
           color: $gray;
           box-shadow: -2px 1px 2px $blue-shadow-pokedex;
         }
+        .fa-edit:hover{
+          color:white;
+          font-weight:bold;
+        }
         .fa-arrow-left {
           background-color: $blue-pokedex;
           padding: 15px;
           border-radius: 50%;
           color: $gray;
           box-shadow: -2px 1px 2px $blue-shadow-pokedex;
+        }
+        .fa-arrow-left:hover{
+          color:white;
+          font-weight:bold;
         }
       }
     }
@@ -448,6 +461,26 @@
         box-shadow: -2px 1px 2px $gray;
       }
     }
+  }
+  .button-to-reviews{
+    display: flex;
+    background-color: #73F340;
+    box-shadow: -2px 1px 2px #377b1b;
+    width: 100%;
+    height: 30px;
+    border-radius: 20px;
+    border: solid #383535 1px;
+    justify-content: center;
+    align-items: center;
+    a {
+      color:$grey-pokedex-text;
+      margin: 100px;
+    }
+    a:hover{
+      text-decoration: none;
+      color: white;
+      font-weight:bold;
+    }
 
 }
 
@@ -516,7 +549,7 @@
   margin: 8px 0 8px 0;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.18);
+  box-shadow: 1px 1px 12px #555;
   .from {
     display: flex;
     flex-direction: column;
@@ -541,14 +574,14 @@
       color: $green;
       font-size: 72px;
     }
-    .fa-times-circle {
-      color: $red;
-      font-size: 72px;
-    }
-    .fa-question-circle{
-      color: $orange;
-      font-size: 72px;
-    }
+      .fa-times-circle {
+        color: $red;
+        font-size: 72px;
+      }
+      .fa-question-circle{
+        color: $orange;
+        font-size: 72px;
+      }
     }
   }
 
@@ -581,3 +614,98 @@
     justify-content: space-between;
   }
 }
+
+.card-show-review {
+  background-color:$red-pokedex;
+  width: 970px;
+  height: 600px;
+  border-radius: 50px;
+  border: solid #9C211E 4px;
+  padding: 16px 20px;
+  .screen{
+    height: 416px;
+    width: 95%;
+    background-color: #FCFAFC;
+    border: solid #B1B0B1 4px;
+    border-radius: 20px;
+    margin-right: 35px;
+    padding: 70px;
+    margin: 20px;
+    .one-review {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  h2{
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    color: white;
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .button-show-review {
+    margin: 20px;
+      a {
+      .fa-arrow-left {
+        background-color: $blue-pokedex;
+        padding: 15px;
+        border-radius: 50%;
+        color: $gray;
+        box-shadow: -2px 1px 2px $blue-shadow-pokedex;
+      }
+      .fa-arrow-left:hover{
+          color:white;
+          font-weight:bold;
+      }
+    }
+  }
+}
+
+.card-review {
+  width: 80%;
+  background-color: $white;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  display: flex;
+  border-radius: 8px;
+  box-shadow: 1px 1px 12px #555;
+
+  img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    object-fit: contain;
+    background-position: center;
+  }
+  .image {
+    max-width: 30%;
+    height: 200px;
+    padding: 8px;
+  }
+
+  .review-content {
+    color: $gray;
+    margin-left: 16px;
+    margin-top: 16px;
+    width: 60%;
+
+    h3 {
+      text-align: center;
+    }
+
+    .fa-star {
+      color: $yellow;
+    }
+  }
+}
+
+.card-reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 60vh;
+}
+

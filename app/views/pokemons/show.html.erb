@@ -53,14 +53,18 @@
                   <p><strong>Health Points</strong> : <%= @pokemon.health_point %></p>
                 </div>
               </div>
-            </div>
+          </div>
           <div class="show-button">
             <p><%= link_to raw('<i class="fas fa-arrow-left"></i>'), dashboard_path %></p>
             <p><%= link_to raw('<i class="fas fa-edit"></i>'), edit_pokemon_path(@pokemon) %></p>
             <p><%= link_to raw('<i class="fas fa-trash-alt"></i>'), pokemon_path(@pokemon), method: :delete, data: { confirm: "Are you sure?" } %></p>
           </div>
-        </div>
+          <div class="button-to-reviews">
+            <%= link_to "Go see the reviews",  booking_review_path(@pokemon) %>
+          </div>
+
     </div>
+
   </div>
 </div>
 
