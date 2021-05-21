@@ -7,25 +7,25 @@
 </div>
 
 <div class="btn-container-home">
-  <button class="btn btn-shoot"><%= link_to "Get a random Pokemon", pokemons_path %></button>
+  <button class="btn btn-shoot"><%= link_to "Get a random Pokemon", random_shot_path %></button>
 </div>
 
 <div class="container-home">
   <div class="cards">
     <div class="home-card lifting-card">
-      <p>Help you with heavy stuffs</p>
+      <p><%= link_to "Help you with heavy stuffs", heavy_stuffs_path %></p>
       <hr>
     </div>
     <div class="home-card flying-card">
-      <p>Enjoy true freedom</p>
+      <p><%= link_to "Enjoy true freedom", true_freedom_path %></p>
       <hr>
     </div>
     <div class="home-card travelling-card">
-      <p>Travel in hazardous places</p>
+      <p><%= link_to "Travel in hazardous places", hazardous_places_path %></p>
       <hr>
       </div>
     <div class="home-card sleeping-card">
-      <p>Just enjoy a cozy day</p>
+      <p><%= link_to "Just enjoy a cozy day", cozy_day_path %></p>
       <hr>
     </div>
   </div>
@@ -33,6 +33,6 @@
   <div class="card-owner">
     <h2>Rent your Pokemon</h2>
     <p>Earn money, help the community, allow your pokemon to enjoy new adventures</p>
-    <button class="btn btn-know-more ">Know more</button>
+    <button class="btn btn-know-more "><%= link_to "Know more", know_more_path %></button>
   </div>
 </div>
