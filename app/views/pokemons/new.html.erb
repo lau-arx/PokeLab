@@ -11,10 +11,10 @@
   <%= f.input :address %>
   <%= f.input :category, collection: ["Electric","Fire","Earth","Psych","Plant","Water"] %>
   <%= f.input :description %>
-  <%= f.input :height%>
-  <%= f.input :weight %>
+  <%= f.input :height, label: "Height (m)"%>
+  <%= f.input :weight, label: "Weight (kg)" %>
   <%= f.input :special_attack %>
-  <%= f.input :price_per_day %>
+  <%= f.input :price_per_day, label: "Price per day (€)" %>
   <%= f.input :health_point %>
   <%= f.input :photo, as: :file %>
   <%= f.submit "Add New Pokemon", class: "btn btn-primary mt-5" %>
