@@ -8,8 +8,8 @@
 
   <%= simple_form_for(@pokemon) do |f| %>
   <%= f.input :name %>
-  <%= f.input :address %>
   <%= f.input :category, collection: ["Electric","Fire","Earth","Psych","Plant","Water"] %>
+  <%= f.input :address %>
   <%= f.input :description %>
   <%= f.input :height%>
   <%= f.input :weight %>
