@@ -33,9 +33,9 @@ class BookingsController < ApplicationController
     authorize @pokemon
 
     @booking.status =  params[:status][0]
-    
+
     @pokemon.available = params[:status][1]
-    
+
     if @booking.save! && @pokemon.save!
       redirect_to dashboard_path(tab: 'content-2')
     else
