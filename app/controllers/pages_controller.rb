@@ -8,7 +8,8 @@ class PagesController < ApplicationController
   end
 
   def random_shot
-    @pokemons = Pokemon.all
+    @pokemon = Pokemon.where(user: current_user).sample
+    redirect_to new_pokemon_booking_path(@pokemon)
     # @pokemons = policy_scope(Pokemon).order(created_at: :desc)
     # @pokemons = Pokemon.sample
   end
