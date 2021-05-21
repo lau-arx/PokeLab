@@ -102,6 +102,11 @@
                   <div class="status">
                     <% if booking.status == "Confirmed"%>
                       <i class="fas fa-check-circle"></i>
+                      <% if booking.review == nil %>
+                      <div class="add-review">
+                        <%= link_to raw('<i class="fas fa-plus"></i> review'), new_booking_review_path(booking) %>
+                      </div>
+                    <% end %>
                     <% elsif booking.status == "Denied"%>
                       <i class="far fa-times-circle"></i>
                     <% else %>
@@ -143,11 +148,6 @@
                 <div class="status">
                   <% if booking.status == "Confirmed"%>
                     <i class="fas fa-check-circle"></i><br>
-                    <% if booking.review == nil %>
-                      <div class="add-review">
-                        <%= link_to raw('<i class="fas fa-plus"></i> review'), new_booking_review_path(booking) %>
-                      </div>
-                    <% end %>
                   <% elsif booking.status == "Denied"%>
                     <i class="far fa-times-circle"></i>
                   <% else %>
