@@ -2,7 +2,11 @@ class PokemonsController < ApplicationController
   before_action :find_pokemon, only: [:show, :edit, :update, :destroy]
   def index
     @pokemons = policy_scope(Pokemon).order(created_at: :desc)
-    @pokemons = @pokemons.where.not(user_id: current_user.id)
+    if current_user.nil?
+      @pokemons = @pokemons.all
+    else
+      @pokemons = @pokemons.where.not(user_id: current_user.id)
+    end
     @pokemons = @pokemons.where("name ILIKE ?", "%#{params[:pokemon_name]}%") if params[:pokemon_name]
     @pokemons = @pokemons.where("address ILIKE ?", "%#{params[:location]}%") if params[:location]
     @pokemons = @pokemons.where("category ILIKE ?", "%#{params[:category]}%") if params[:category]
