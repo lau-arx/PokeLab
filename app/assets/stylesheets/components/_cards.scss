@@ -3,7 +3,7 @@
   display: grid;
   grid-auto-rows: auto;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-gap: 16px;
+  grid-gap: 70px;
   margin-top: 60px;
   margin-bottom: 60px;
   justify-content: center;
@@ -18,22 +18,28 @@
 
 .home-card {
   justify-self: center;
-  height: 300px;
-  width: 100%;
+  height: 170px;
+  width: 110%;
   background-size: cover;
   object-fit: contain;
   background-position: center;
   border-radius: 4px;
   // margin-bottom: 25px;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.18);
+  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.17);
   transition: 500ms;
-  filter: brightness(85%);
+  filter: brightness(90%);
   p {
     color: white;
     text-align: center;
     position: relative;
     top: 200px;
-    font-size: 19px;
+    font-size: 16px;
+
+  }
+
+  a {
+    text-decoration: none;
+    color : white;
   }
 
   hr {
@@ -45,8 +51,8 @@
 
   &:hover {
     transform: scale(1.05);
-    box-shadow: 3px 4px 4px rgba(32, 32, 32, 0.30);
-    filter: brightness(130%);
+    box-shadow: 2px 3px 3px rgba(28, 28, 28, 0.25);
+    filter: brightness(125%);
   }
 }
 .flying-card {
@@ -83,6 +89,7 @@
     position: relative;
     top: 150px;
     left: 25px;
+
   }
 
   &:hover {
