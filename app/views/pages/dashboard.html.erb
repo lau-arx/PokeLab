@@ -178,16 +178,26 @@
     <div class="dash-title">
       <h1>Welcome <%= current_user.first_name %></h1>
     </div>
-    <h2>Your Pokemons' reviews:</h2>
+    <h2>Your Pokemons reviews:</h2>
     <div class="card-reviews">
       <% @pokemons.each do |pokemon| %>
-        <%= pokemon.name  %>
-        <% reviews = pokemon.reviews  %>
-          <% reviews.each do |review| %>
-            <%= review.rating  %>
-            <%= review.comment  %>
-            <%= review.booking.user.first_name  %> <%= review.booking.user.last_name  %>
-          <% end %>
+        <div class="card-review">
+          <div class="image">
+            <% if pokemon.photo.attached? %>
+              <%= cl_image_tag pokemon.photo.key %>
+            <% else %>
+              <%= image_tag "verso-carte.png" %>
+            <% end %>
+          </div>
+          <div class="review-content">
+            <h3><%= pokemon.name  %></h3>
+            <% reviews = pokemon.reviews  %>
+            <% reviews.each do |review| %>
+              <p><strong><%= review.rating  %></strong><i class="fas fa-star"></i>
+              <i class="fas fa-quote-left">    </i><strong><%= review.comment %></strong>  <i class="fas fa-quote-right"></i> left by: <em><%= review.booking.user.first_name  %> <%= review.booking.user.last_name  %></em></p>
+            <% end %>
+          </div>
+        </div>
       <% end %>
     </div>
 
