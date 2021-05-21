@@ -1,0 +1,22 @@
+<div class="btn-return">
+  <%= link_to raw('<i class="fas fa-arrow-left"></i>'), dashboard_path %>
+</div>
+
+<div class="mt-5 col-4 offset-4">
+
+  <h1>Add a review</h1>
+
+  <%= simple_form_for([@booking, @review]) do |f| %>
+  <%= f.input :rating, collection: (1..5) %>
+  <%= f.input :comment %>
+  <%= f.submit "Add New Review", class: "btn btn-primary mt-5" %>
+  <% end %>
+
+</div>
+
+<div class="btn-container mt-5 col-4 offset-4">
+  <p><%= link_to "Return to bookings", dashboard_path(tab: 'content-2'), class: "btn btn-primary"  %></p>
+</div>
+
+
+
