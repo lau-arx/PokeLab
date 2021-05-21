@@ -101,30 +101,88 @@
 
 }
 
+.card-pokemon img {
+  height: 100%;
+  width: 178px;
+  object-fit: contain;
+}
+
+.card-pokemon p {
+
+  color: black;
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.cards a {
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.card-pokemon h3 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 55px;
+}
+
+.card-pokemon p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
 .card-pokemon {
+  position: relative;
+  overflow: hidden;
+  height: 30vh;
+  background: white;
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
   padding: 10px;
   justify-self: center;
-  height: 250px;
-  width: 550px;
-  background-size: cover;
   object-fit: contain;
   border-radius: 4px;
-  margin-bottom: 25px;
+  margin: 0px 25px;
   box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.13);
   transition: 200ms;
-  a, p {
-    color: transparent;
+
+  .card-description {
+    flex-grow: 1;
+
+  }
+
+  i.fa-heart {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: $red;
+  }
+
+  .fa-star {
+    color: $yellow;
   }
 
   &:hover {
     filter: grayscale(50%);;
-    a, p{
-      text-decoration: none;
-      color: white;
-    }
+    box-shadow: 2px 3px 3px rgba(30, 30, 30, 0.20);
+
+  }
+
+  .price-pokemon-index {
+    min-width: 100px;
+    margin-left: 10px;
+    margin-top: 158px;
+    padding-left: 11px;
   }
 }
 
@@ -233,7 +291,6 @@
 .cards-index {
   display: flex;
   flex-direction: column;
-  width: 50%;
   margin-top: 24px;
   justify-content: left;
   align-items: center;
