@@ -21,7 +21,7 @@
 
   <div class="content <%= (params[:tab] == 'content-1' || params[:tab].nil?) ? 'displayed' : 'hidden' %>" id="content-1">
     <div class="dash-title">
-      <h1>Welcome <%= current_user.first_name %></h1>
+      <h1>Welcome <%= current_user.first_name.capitalize %></h1>
     </div>
     <div class="add-pokemon">
       <%= link_to raw('<p><i class="fas fa-plus"></i> Pokemon</p>'), new_pokemon_path %>
@@ -35,7 +35,7 @@
             </div>
               <%= link_to pokemon_path(pokemon) do %>
                 <div class="card-header">
-                  <h3><%= pokemon.name %></h3>
+                  <h3><%= pokemon.name.capitalize %></h3>
                   <p><%= pokemon.health_point %>PV
                   <% case pokemon.category %>
                     <% when "Water" %>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="card-description">
                   <h5><i class="fas fa-crown"></i> <%= pokemon.special_attack %></h5>
-                  <p><%= pokemon.description.truncate(130) %></p>
+                  <p><%= pokemon.description.truncate(100) %></p>
                 </div>
                 <div class="card-price">
                   <p><strong><%= pokemon.reviews.average(:rating) %></strong><i class="fas fa-star"> </i><em><%= pokemon.reviews.count %> reviews</em></p>
@@ -89,7 +89,7 @@
                   <%= cl_image_path "default_photo.png", class:"pokebook" %>
                 <% end %>
                 <div class="booking-content pl-4">
-                  <h3><%= Pokemon.find(booking.pokemon_id).name%></h3>
+                  <h3><%= Pokemon.find(booking.pokemon_id).name.capitalize %></h3>
                   <div class="from">
                     <h5>At : <%= Pokemon.find(booking.pokemon_id).address %></h5>
                     <p>From : <%= booking.start_date %></p>
@@ -188,7 +188,7 @@
                 <% end %>
               </div>
               <div class="review-content">
-                <h3><%= pokemon.name  %></h3>
+                <h3><%= pokemon.name.capitalize  %></h3>
                 <% reviews = pokemon.reviews  %>
                 <% reviews.each do |review| %>
                   <p><strong><%= review.rating  %></strong><i class="fas fa-star"></i>

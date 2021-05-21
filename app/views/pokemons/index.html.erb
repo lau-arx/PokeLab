@@ -18,7 +18,7 @@
           <%= link_to new_pokemon_booking_path(pokemon), class: "w-100" do %>
             <div class="card-pokemon">
               <%if pokemon.photo.attached? %>
-                <img src="<%= cl_image_path pokemon.photo.key%>">
+                <img src="<%= cl_image_path pokemon.photo.key %>">
               <% else %>
                 <img src="<%= image_path "verso-carte.png"%>">
               <% end %>
