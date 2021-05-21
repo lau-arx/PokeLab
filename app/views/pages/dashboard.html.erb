@@ -102,6 +102,11 @@
                   <div class="status">
                     <% if booking.status == "Confirmed"%>
                       <i class="fas fa-check-circle"></i>
+                      <% if booking.review == nil %>
+                        <div class="add-review">
+                          <%= link_to raw('<i class="fas fa-plus"></i> review'), new_booking_review_path(booking) %>
+                        </div>
+                      <% end %>
                     <% elsif booking.status == "Denied"%>
                       <i class="far fa-times-circle"></i>
                     <% else %>
@@ -139,6 +144,27 @@
                     <p class="mt-3">Total price : <%= (booking.end_date - booking.start_date).to_i * Pokemon.find(booking.pokemon_id).price_per_day.to_i %> € </p>
                   </div>
                 </div>
+
+              </div>
+              <div class="actions-details">
+                <div class="status">
+                  <% if booking.status == "Confirmed"%>
+                    <i class="fas fa-check-circle"></i><br>
+                  <% elsif booking.status == "Denied"%>
+                    <i class="far fa-times-circle"></i>
+                  <% else %>
+                    <i class="far fa-question-circle"></i>
+                  <% end %>
+                </div>
+                <div class="book-actions">
+                  <% if booking.status == "Pending"%>
+                    <%= link_to raw('<i class="fas fa-check-circle"></i>'), pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: ["Confirmed", false]), method: :patch, data: { confirm: "Are you sure?" } %>
+                    <%= link_to raw('<i class="far fa-times-circle"></i>'), pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: ["Denied", true]), method: :patch, data: { confirm: "Are you sure?" } %>
+                    <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), data: { confirm_swal: '', method: "DELETE"} %>
+                  <% else %>
+                    <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), data: { confirm_swal: '', method: "DELETE"} %>
+                  <% end %>
+
                 <div class="actions-details">
                   <div class="status">
                     <% if booking.status == "Confirmed"%>
@@ -163,6 +189,7 @@
                       <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), data: { confirm_swal: '', method: "DELETE"} %>
                     <% end %>
                   </div>
+
                 </div>
               </div>
             <% end %>
