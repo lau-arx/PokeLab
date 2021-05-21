@@ -13,17 +13,27 @@
       <% else %>
         <h3><%="No pokemon available in your area"%></h3>
       <% end %>
-      <div class="cards cards-index">
+      <div class="cards cards-index mt-5">
         <% @pokemons.each do |pokemon| %>
-        <%= link_to new_pokemon_booking_path(pokemon) do %>
-            <%if pokemon.photo.attached? %>
-              <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= cl_image_path pokemon.photo.key%>')">
-            <% else %>
-              <div class="card-pokemon" style = "background-image: linear-gradient(rgba(30,30,30,0.2), rgba(30,30,30,0.2)), url('<%= image_path "verso-carte.png" %>')">
-            <% end %>
-                <h3><%= pokemon.name.upcase %></h3>
-                <p><%= pokemon.category.upcase %></p>
-                <p><%= pokemon.price_per_day %>/day</p>
+          <%= link_to new_pokemon_booking_path(pokemon), class: "w-100" do %>
+            <div class="card-pokemon">
+              <%if pokemon.photo.attached? %>
+                <img src="<%= cl_image_path pokemon.photo.key%>">
+              <% else %>
+                <img src="<%= image_path "verso-carte.png"%>">
+              <% end %>
+              <div class="card-description">
+                <h3 class="name"><%= pokemon.name.upcase %></h3>
+                <p class="category"><%= pokemon.category.upcase %></p>
+                <p><%= pokemon.description.truncate(130) %></p>
+              </div>
+              <div class="info">
+                <i class="fas fa-heart"></i>
+                <div class="price-pokemon-index">
+                  <p><strong><%= rand(1..5) %></strong><i class="fas fa-star"> </i><em><%= rand(10..100) %> reviews</em></p>
+                  <p class="price"><%= pokemon.price_per_day %>€/day</p>
+                </div>
+              </div>
             </div>
           <% end %>
         <% end %>
@@ -34,7 +44,6 @@
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
-</div>
 </div>
 
 
