@@ -33,43 +33,43 @@
               <%= link_to raw('<i class="fas fa-trash-alt"></i>'), pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure?" } %>
               <%= link_to raw('<i class="fas fa-edit"></i>'), edit_pokemon_path(pokemon) %>
             </div>
-             <%= link_to pokemon_path(pokemon) do %>
-            <div class="card-header">
-              <h3><%= pokemon.name %></h3>
-              <p><%= pokemon.health_point %>PV
-              <% case pokemon.category %>
-              <% when "Water" %>
-                <span class="font-water"><%= raw('<i class="fas fa-tint"></i>') %></span>
-              <% when "Fire" %>
-                <span class="font-fire"><%= raw('<i class="fas fa-fire"></i>') %></span>
-              <% when "Plant" %>
-                <span class="font-plant"><%= raw('<i class="fas fa-seedling"></i>') %></span>
-              <% when "Earth" %>
-                <span class="font-earth"><%= raw('<i class="fas fa-mountains"></i>')  %></span>
-              <% when "Psych" %>
-                <span class="font-psych"><%= raw('<i class="fas fa-podcast"></i>')  %></span>
-              <% when "Electric" %>
-                <span class="font-electric"></span><%= raw('<i class="fas fa-bolt"></i>') %></span>
-              <% else %>
-                <span class="font-electric"></span><%= raw('<i class="fas fa-bolt"></i>') %></span>
-              <% end %></p>
-            </div>
-            <div class="image">
-              <% if pokemon.photo.attached? %>
-                <%= cl_image_tag pokemon.photo.key %>
-              <% else %>
-                <%= image_tag "verso-carte.png" %>
-              <% end %>
-            </div>
-            <div class="card-description">
-              <h5><i class="fas fa-crown"></i> <%= pokemon.special_attack %></h5>
-              <p><%= pokemon.description.truncate(130) %></p>
-            </div>
-            <div class="card-price">
-              <p><strong><%= rand(1..5) %></strong><i class="fas fa-star"> </i><em><%= rand(10..100) %> reviews</em></p>
-              <h5><%= pokemon.price_per_day%>€</h5>
-            </div>
-                    <% end %>
+            <%= link_to pokemon_path(pokemon) do %>
+              <div class="card-header">
+                <h3><%= pokemon.name %></h3>
+                <p><%= pokemon.health_point %>PV
+                <% case pokemon.category %>
+                <% when "Water" %>
+                  <span class="font-water"><%= raw('<i class="fas fa-tint"></i>') %></span>
+                <% when "Fire" %>
+                  <span class="font-fire"><%= raw('<i class="fas fa-fire"></i>') %></span>
+                <% when "Plant" %>
+                  <span class="font-plant"><%= raw('<i class="fas fa-seedling"></i>') %></span>
+                <% when "Earth" %>
+                  <span class="font-earth"><%= raw('<i class="fas fa-mountains"></i>')  %></span>
+                <% when "Psych" %>
+                  <span class="font-psych"><%= raw('<i class="fas fa-podcast"></i>')  %></span>
+                <% when "Electric" %>
+                  <span class="font-electric"></span><%= raw('<i class="fas fa-bolt"></i>') %></span>
+                <% else %>
+                  <span class="font-electric"></span><%= raw('<i class="fas fa-bolt"></i>') %></span>
+                <% end %></p>
+              </div>
+              <div class="image">
+                <% if pokemon.photo.attached? %>
+                  <%= cl_image_tag pokemon.photo.key %>
+                <% else %>
+                  <%= image_tag "verso-carte.png" %>
+                <% end %>
+              </div>
+              <div class="card-description">
+                <h5><i class="fas fa-crown"></i> <%= pokemon.special_attack %></h5>
+                <p><%= pokemon.description.truncate(130) %></p>
+              </div>
+              <div class="card-price">
+                <p><strong><%= rand(1..5) %></strong><i class="fas fa-star"> </i><em><%= rand(10..100) %> reviews</em></p>
+                <h5><%= pokemon.price_per_day%>€</h5>
+              </div>
+            <% end %>
           </div>
       <% end %>
     </div>
@@ -153,8 +153,8 @@
               </div>
               <div class="book-actions">
                 <%if booking.status == "Pending"%>
-                  <%= link_to raw('<i class="fas fa-check-circle"></i>'), pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: "Confirmed"), method: :patch, data: { confirm: "Are you sure?" } %>
-                  <%= link_to raw('<i class="far fa-times-circle"></i>'), pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: "Denied"), method: :patch, data: { confirm: "Are you sure?" } %>
+                  <%= link_to raw('<i class="fas fa-check-circle"></i>'), pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: ["Confirmed", false]), method: :patch, data: { confirm: "Are you sure?" } %>
+                  <%= link_to raw('<i class="far fa-times-circle"></i>'), pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: ["Denied", true]), method: :patch, data: { confirm: "Are you sure?" } %>
                   <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
                 <% else %>
                   <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
