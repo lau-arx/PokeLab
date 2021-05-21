@@ -49,6 +49,8 @@ class PokemonsController < ApplicationController
 
   def destroy
     @pokemon.destroy
+    # render json: { message: "Post ##{@pokemon.name} successfully deleted!" }
+    # rescue ActiveRecord::RecordNotDestroyed
     redirect_to dashboard_path
   end
 
