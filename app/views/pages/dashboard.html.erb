@@ -19,6 +19,9 @@
   <%# To do : add curent_user name once model updated  %>
 
   <div class="content <%= (params[:tab] == 'content-1' || params[:tab].nil?) ? 'displayed' : 'hidden' %>" id="content-1">
+    <div class="dash-title">
+      <h1>Welcome <%= current_user.first_name %></h1>
+    </div>
     <div class="add-pokemon">
       <%= link_to raw('<p><i class="fas fa-plus"></i> Pokemon</p>'), new_pokemon_path %>
     </div>
