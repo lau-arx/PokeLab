@@ -28,9 +28,9 @@
     <div class="cards overflow-pokemons">
       <% @pokemons.each do |pokemon| %>
           <div class="card-pokedex clickable">
-         
+
             <div class="card-buttons">
-              <%= link_to raw('<i class="fas fa-trash-alt"></i>'), pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure?" } %>
+              <%= link_to raw('<i class="fas fa-trash-alt"></i>'), pokemon_path(pokemon), data: { confirm_swal: '', method: "DELETE"} %>
               <%= link_to raw('<i class="fas fa-edit"></i>'), edit_pokemon_path(pokemon) %>
             </div>
             <%= link_to pokemon_path(pokemon) do %>
@@ -112,7 +112,7 @@
 
 
               <div class="book-actions">
-                <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+                <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), method: :delete, data: { confirm_swal: '', method: "DELETE"}  %>
               </div>
             </div>
           </div>
@@ -160,9 +160,9 @@
                 <%if booking.status == "Pending"%>
                   <%= link_to raw('<i class="fas fa-check-circle"></i>'), pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: ["Confirmed", false]), method: :patch, data: { confirm: "Are you sure?" } %>
                   <%= link_to raw('<i class="far fa-times-circle"></i>'), pokemon_booking_path(Pokemon.find(booking.pokemon_id).id, booking, status: ["Denied", true]), method: :patch, data: { confirm: "Are you sure?" } %>
-                  <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+                  <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), data: { confirm_swal: '', method: "DELETE"} %>
                 <% else %>
-                  <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), method: :delete, data: { confirm: "Are you sure?" } %>
+                  <%= link_to raw('<i class="fas fa-trash-alt"></i>'), booking_path(booking), data: { confirm_swal: '', method: "DELETE"} %>
                 <% end %>
               </div>
             </div>
@@ -204,3 +204,5 @@
   </div>
 
 </div>
+<%=  link_to 'Action', '#link-to-some-page', data: { confirm_swal: '', remote: true, method: 'POST' } %>
+<%= link_to 'TEST', '#', data: { test_swal: ''} %>
