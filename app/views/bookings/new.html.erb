@@ -6,9 +6,9 @@
       <div class="pokemon-card">
         <div class = "card-image">
           <% if @pokemon.photo.attached? %>
-            <%= cl_image_tag @pokemon.photo.key, height: 300, crop: :fill %>
+            <%= cl_image_tag @pokemon.photo.key, width: 250, height: 300, crop: :fill %>
           <% else %>
-            <%= cl_image_tag("tfoqtj3tttbjd0satx2t", width: 400, height: 300, crop: :fill) %>
+            <%= cl_image_tag("tfoqtj3tttbjd0satx2t", width: 250, height: 300, crop: :fill) %>
           <% end %>
         </div>
         <div class="pokemon-description">
