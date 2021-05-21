@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2021_05_21_094702) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +48,15 @@ ActiveRecord::Schema.define(version: 2021_05_21_094702) do
     t.date "end_date"
     t.index ["pokemon_id"], name: "index_bookings_on_pokemon_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
   create_table "pokemons", force: :cascade do |t|
