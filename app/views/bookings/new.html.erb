@@ -58,24 +58,25 @@
             <p><%= link_to raw('<i class="fas fa-arrow-left"></i>'), pokemons_path %></p>
             <p><div class= "button-blue-fat"></div></p>
           </div>
-          <div class="booking">
-              <div class="row justify-content-center">
-                <div class="centered-booking">
-                  <div class="booking-form">
-                    <%= simple_form_for [@pokemon, @booking], html: {} do |f| %>
-                      <div class="d-flex">
-                        <%= f.input :start_date, as: :date, html5: true, wrapper_html: { class: "flex-grow-1"} %>
-                        <%= f.input :end_date, as: :date, html5: true, wrapper_html: { class: "flex-grow-1"} %>
-                      </div>
-                      <div>
-                        <%= f.submit "Confirm booking", class: "btn btn-primary btn-block btn-submit-red"%>
-                      </div>
-                    <% end %>
-                  </div>
+
+        <div class="booking">
+            <div class="row justify-content-center">
+              <div class="centered-booking">
+                <div class="booking-form">
+                  <%= simple_form_for [@pokemon, @booking], html: {} do |f| %>
+                    <div class="d-flex">
+                      <%= f.input :start_date, as: :date, html5: true, wrapper_html: { class: "flex-grow-1"} %>
+                      <%= f.input :end_date, as: :date, html5: true, wrapper_html: { class: "flex-grow-1"} %>
+                    </div>
+                    <div>
+                      <%= f.submit "Confirm booking", class: "btn btn-primary btn-block btn-submit-red"%>
+                    </div>
+                  <% end %>
                 </div>
               </div>
-          </div>
-    </div>
+            </div>
+        </div>
+      </div>
   </div>
 </div>
 
