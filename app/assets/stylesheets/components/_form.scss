@@ -81,6 +81,7 @@ input[type=search-pokemon] {
   &:hover {
     background: $red ;
   }
+}
 
 .form-index {
   // margin-top: 0px;
@@ -93,5 +94,5 @@ input[type=search-pokemon] {
   z-index: 1;
   background-color: $white;
   border-top: 1px solid $light-gray;
-  }
 }
+
