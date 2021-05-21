@@ -113,7 +113,7 @@
   object-fit: contain;
   border-radius: 4px;
   margin-bottom: 25px;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.13);
+  box-shadow: 1px 1px 12px #555;
   transition: 200ms;
   a, p {
     color: transparent;
@@ -130,11 +130,12 @@
 
 .card-pokedex {
   background-color: $white;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.13);
+  box-shadow: 1px 1px 12px #555;
   border-radius: 8px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  margin-top: 16px;
   margin-bottom: 16px;
   padding: 16px;
   width:100%;
@@ -459,7 +460,7 @@
   margin: 8px 0 8px 0;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.18);
+  box-shadow: 1px 1px 12px #555;
   .from {
     display: flex;
     flex-direction: column;
@@ -529,9 +530,10 @@
   width: 80%;
   background-color: $white;
   margin-bottom: 16px;
+  margin-top: 16px;
   display: flex;
   border-radius: 8px;
-  box-shadow: 1px 2px 2px rgba(20, 20, 20, 0.18);
+  box-shadow: 1px 1px 12px #555;
 
   img {
     width: 100%;
