@@ -30,7 +30,8 @@
               <div class="info">
                 <i class="fas fa-heart"></i>
                 <div class="price-pokemon-index">
-                  <p><strong><%= rand(1..5) %></strong><i class="fas fa-star"> </i><em><%= rand(10..100) %> reviews</em></p>
+
+                  <p><strong><%= pokemon.reviews.average(:rating) %></strong><i class="fas fa-star"> </i><em><%= pokemon.reviews.count %> reviews</em></p>
                   <p class="price"><%= pokemon.price_per_day %>€/day</p>
                 </div>
               </div>
