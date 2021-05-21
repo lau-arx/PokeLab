@@ -55,7 +55,7 @@
               </div>
             </div>
           <div class="show-button">
-            <p><%= link_to raw('<i class="fas fa-arrow-left"></i>'), pokemons_path %></p>
+            <p><%= link_to raw('<i class="fas fa-arrow-left"></i>'), dashboard_path %></p>
             <p><%= link_to raw('<i class="fas fa-edit"></i>'), edit_pokemon_path(@pokemon) %></p>
             <p><%= link_to raw('<i class="fas fa-trash-alt"></i>'), pokemon_path(@pokemon), method: :delete, data: { confirm: "Are you sure?" } %></p>
           </div>
