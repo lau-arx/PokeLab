@@ -145,6 +145,7 @@
               <div class="status">
                 <% if booking.status == "Confirmed"%>
                   <i class="fas fa-check-circle"></i>
+                  <%= link_to "Leave a review", new_booking_review_path(booking) %>
                 <% elsif booking.status == "Denied"%>
                   <i class="far fa-times-circle"></i>
                 <% else %>
