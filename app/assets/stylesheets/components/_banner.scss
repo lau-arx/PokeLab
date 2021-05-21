@@ -6,7 +6,7 @@
   object-fit: contain;
   background-position: center;
   margin-top: 0;
-
+  position: relative;
 
 
   h1 {
@@ -14,6 +14,29 @@
     margin-left: 24px;
     color: white;
     font-size: 70px;
+  }
+
+  a {
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+    margin-top: 30%;
+  }
+
+  i {
+    position: absolute;
+    left: 50%;
+    bottom: 35px;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    color: white;
+    transition: 500ms;
+
+
+    &:hover {
+      color : $red;
+      // transition-duration: 1s;
+    }
   }
 
 }

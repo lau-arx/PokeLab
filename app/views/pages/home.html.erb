@@ -3,11 +3,8 @@
   <div class="form-home">
     <%= render "shared/search_form" %>
   </div>
-
-</div>
-
-<div class="btn-container-home">
-  <button class="btn btn-shoot"><%= link_to "Get a random Pokemon", random_shot_path %></button>
+  <%= link_to("Get a random Pokemon", random_shot_path, { class: 'btn btn-shoot' }) %>
+  <i class="fas fa-arrow-down"></i>
 </div>
 
 <div class="container-home">
