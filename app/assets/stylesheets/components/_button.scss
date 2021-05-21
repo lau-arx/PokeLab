@@ -42,6 +42,7 @@
     color: white;
   }
 }
+
 .btn-know-more {
   color: $blue;
   background-color: $yellow;
@@ -74,6 +75,14 @@
     text-decoration: none;
     font-weight: 900;
     font-size: 20px;
+  }
+}
+
+.add-review {
+  margin-top: 8px;
+  a {
+    color: $green;
+    text-decoration: none;
   }
 }
 

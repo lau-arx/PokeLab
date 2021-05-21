@@ -66,7 +66,7 @@
                 <p><%= pokemon.description.truncate(130) %></p>
               </div>
               <div class="card-price">
-                <p><strong><%= rand(1..5) %></strong><i class="fas fa-star"> </i><em><%= rand(10..100) %> reviews</em></p>
+                <p><strong><%= pokemon.reviews.average(:rating) %></strong><i class="fas fa-star"> </i><em><%= pokemon.reviews.count %> reviews</em></p>
                 <h5><%= pokemon.price_per_day%>€</h5>
               </div>
             <% end %>
@@ -144,8 +144,12 @@
             <div class="actions-details">
               <div class="status">
                 <% if booking.status == "Confirmed"%>
-                  <i class="fas fa-check-circle"></i>
-                  <%= link_to "Leave a review", new_booking_review_path(booking) %>
+                  <i class="fas fa-check-circle"></i><br>
+                  <% if booking.review == nil %>
+                    <div class="add-review">
+                      <%= link_to raw('<i class="fas fa-plus"></i> review'), new_booking_review_path(booking) %>
+                    </div>
+                  <% end %>
                 <% elsif booking.status == "Denied"%>
                   <i class="far fa-times-circle"></i>
                 <% else %>
@@ -171,7 +175,22 @@
   </div>
 
   <div class="content  <%= params[:tab] == 'content-3' ? 'displayed' : 'hidden' %>" id="content-3">
-    WIP: Reviews
+    <div class="dash-title">
+      <h1>Welcome <%= current_user.first_name %></h1>
+    </div>
+    <h2>Your Pokemons' reviews:</h2>
+    <div class="card-reviews">
+      <% @pokemons.each do |pokemon| %>
+        <%= pokemon.name  %>
+        <% reviews = pokemon.reviews  %>
+          <% reviews.each do |review| %>
+            <%= review.rating  %>
+            <%= review.comment  %>
+            <%= review.booking.user.first_name  %> <%= review.booking.user.last_name  %>
+          <% end %>
+      <% end %>
+    </div>
+
   </div>
 
 </div>
