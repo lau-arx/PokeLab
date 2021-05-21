@@ -1,4 +1,13 @@
 class ReviewsController < ApplicationController
+
+  def show
+
+    @pokemon = Pokemon.find(params[:id])
+    @reviews = @pokemon.reviews
+    authorize @reviews
+    authorize @pokemon
+  end
+
   def new
     @review = Review.new
     @booking = Booking.find(params[:booking_id])
@@ -14,7 +23,7 @@ class ReviewsController < ApplicationController
     authorize @pokemon
     @review.booking = @booking
 
-    if @review.save 
+    if @review.save
       redirect_to dashboard_path(tab: 'content-2')
     else
       render 'pages/dashboard'
@@ -24,6 +33,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :content, :booking_id)
+    params.require(:review).permit(:rating, :content, :booking_id, :id)
   end
 end
